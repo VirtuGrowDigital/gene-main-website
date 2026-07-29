@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import heroBg from "../assets/images/hero-bg.png";
+import heroBgMobile from "../assets/images/home-bg-mobile.png";
 
 export default function CertificationsHero() {
   return (
@@ -11,8 +12,14 @@ export default function CertificationsHero() {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
+<img
+  src={heroBgMobile}
+  alt="Certifications Hero"
+  className="absolute inset-0 h-full w-full object-cover object-center lg:hidden"
+/>
+
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#00131e]/60 via-[#00131e]/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#00131e]/85 via-[#00131e]/45 to-transparent lg:from-[#00131e]/60 lg:via-[#00131e]/20" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full w-full max-w-[1180px] items-center px-5 md:px-6 lg:px-8">

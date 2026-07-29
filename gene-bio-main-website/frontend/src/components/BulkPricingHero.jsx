@@ -28,7 +28,7 @@ export default function BulkPricingHero() {
 
         {/* Hero Content */}
 
-        <div className="mx-auto grid min-h-[640px] max-w-[1180px] items-center gap-12 px-5 lg:grid-cols-2">
+        <div className="mx-auto grid min-h-[640px] max-w-[1180px] items-center gap-12 px-5 pt-20 sm:pt-24 lg:pt-0 lg:grid-cols-2">
 
           {/* LEFT */}
 

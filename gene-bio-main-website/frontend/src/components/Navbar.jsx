@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -45,10 +45,30 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const navRef = useRef(null);
 
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsOpen(false);
+        setOpenDropdown(null);
+      }
+    }
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+  
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
   return (
     <header className="absolute left-0 top-0 z-50 w-full px-5 pt-6 md:px-10 lg:px-16">
       <nav
+      ref={navRef}
         className="
           relative mx-auto flex max-w-[1180px] items-center justify-between
           rounded-[32px] bg-white px-5 py-3
@@ -144,7 +164,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0795A8] text-white lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full  text-black lg:hidden"
         >
           {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -155,28 +175,49 @@ export default function Navbar() {
             <div className="flex flex-col gap-2">
               {navItems.map((item) =>
                 item.children ? (
-                  <div key={item.name}>
-                    <p className="px-4 py-2 text-sm font-bold text-[#068D9C]">
-                      {item.name}
-                    </p>
+                  <div key={item.name} className="rounded-xl">
+  <button
+    onClick={() =>
+      setOpenDropdown(
+        openDropdown === item.name ? null : item.name
+      )
+    }
+    className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold text-[#068D9C] hover:bg-[#EEF9FD]"
+  >
+    {item.name}
 
-                    {item.children.map((child) => (
-                      <NavLink
-                        key={child.to}
-                        to={child.to}
-                        onClick={() => setIsOpen(false)}
-                        className={({ isActive }) =>
-                          `ml-3 block rounded-xl px-4 py-3 text-sm ${
-                            isActive
-                              ? "bg-[#EEF9FD] font-semibold text-[#04C7E8]"
-                              : "text-[#068D9C] hover:bg-[#EEF9FD]"
-                          }`
-                        }
-                      >
-                        {child.name}
-                      </NavLink>
-                    ))}
-                  </div>
+    <ChevronDown
+      size={18}
+      className={`transition-transform duration-300 ${
+        openDropdown === item.name ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  {openDropdown === item.name && (
+    <div className="ml-3 mt-1 flex flex-col gap-1">
+      {item.children.map((child) => (
+        <NavLink
+          key={child.to}
+          to={child.to}
+          onClick={() => {
+            setIsOpen(false);
+            setOpenDropdown(null);
+          }}
+          className={({ isActive }) =>
+            `block rounded-xl px-4 py-3 text-sm ${
+              isActive
+                ? "bg-[#EEF9FD] font-semibold text-[#04C7E8]"
+                : "text-[#068D9C] hover:bg-[#EEF9FD]"
+            }`
+          }
+        >
+          {child.name}
+        </NavLink>
+      ))}
+    </div>
+  )}
+</div>
                 ) : (
                   <NavLink
                     key={item.name}

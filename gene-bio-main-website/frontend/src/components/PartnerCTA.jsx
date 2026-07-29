@@ -13,15 +13,46 @@ export default function PartnerCTA() {
               worldwide.
             </p>
   
-            <div className="mt-10 flex justify-center gap-5">
-              <button className="rounded-xl bg-white px-8 py-4 font-semibold">
-                Inquire for Bulk Pricing
-              </button>
-  
-              <button className="rounded-xl border border-white px-8 py-4 font-semibold text-white">
-                Download Full Catalog
-              </button>
-            </div>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-5">
+  <button
+    className="
+      w-full
+      rounded-xl
+      bg-white
+      px-8
+      py-4
+      text-center
+      font-semibold
+      transition
+      hover:bg-gray-100
+
+      sm:w-auto
+    "
+  >
+    Inquire for Bulk Pricing
+  </button>
+
+  <button
+    className="
+      w-full
+      rounded-xl
+      border
+      border-white
+      px-8
+      py-4
+      text-center
+      font-semibold
+      text-white
+      transition
+      hover:bg-white
+      hover:text-[#27B8F2]
+
+      sm:w-auto
+    "
+  >
+    Download Full Catalog
+  </button>
+</div>
           </div>
         </div>
       </section>

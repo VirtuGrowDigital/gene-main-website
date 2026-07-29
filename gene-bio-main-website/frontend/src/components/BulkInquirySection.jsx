@@ -12,7 +12,7 @@ export default function BulkInquirySection() {
       <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-start gap-20 px-5 lg:grid-cols-[360px_1fr]">
         {/* LEFT */}
 
-        <div className="pt-28">
+        <div className="pt-0 lg:pt-28">
           <h2 className="text-[55px] font-bold leading-[1.05] tracking-[-0.03em] text-[#202020]">
             Submit Your
             <br />

@@ -6,11 +6,12 @@ import dnaBg from "../assets/images/DNA logo background.png";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#454545] text-white">
+    <footer className="relative overflow-hidden bg-[#0A2020] lg:bg-[#454545] text-white">
 
       {/* DNA Background */}
-      <div
-  className="absolute inset-0 pointer-events-none opacity-[0.09]"
+{/* Desktop DNA Background */}
+<div
+  className="pointer-events-none absolute inset-0 hidden opacity-[0.09] lg:block"
   style={{
     backgroundImage: `url(${dnaBg})`,
     backgroundRepeat: "no-repeat",

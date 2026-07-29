@@ -3,29 +3,29 @@ import { CircleCheck } from "lucide-react";
 
 export default function PrecisionScale() {
   return (
-    <section className="bg-white pt-[90px] pb-[90px]">
-     <div className="max-w-[1380px] mx-auto px-14">
+    <section className="bg-white py-16 lg:pt-[90px] lg:pb-[90px]">
+     <div className="mx-auto max-w-[1380px] px-5 md:px-8 lg:px-14">
 
         {/* Heading */}
 
         <div className="text-center">
 
-          <h2 className="text-[#18B7F2] text-[60px] font-bold leading-none">
+        <h2 className="text-[36px] font-bold leading-tight text-[#18B7F2] md:text-[48px] lg:text-[60px]">
             Precision at Scale
           </h2>
 
-          <div className="w-[110px] h-[4px] bg-[#0B9AA7] rounded-full mx-auto mt-8"></div>
+          <div className="mx-auto mt-6 h-[4px] w-[90px] rounded-full bg-[#0B9AA7] lg:mt-8 lg:w-[110px]" />
 
         </div>
 
         {/* Content */}
 
-        <div className="mt-24 grid grid-cols-[520px_600px] justify-center items-center gap-24">
+        <div className="mt-14 grid items-center gap-14 lg:mt-24 lg:grid-cols-[520px_600px] lg:justify-center lg:gap-24">
           {/* Left Side */}
 
-          <div className="w-[500px]">
+          <div className="w-full lg:w-[500px]">
 
-          <h3 className="text-[68px] leading-[72px] font-bold tracking-[-2px] text-[#171717]">
+          <h3 className="text-[38px] font-bold leading-[1.1] tracking-[-1px] text-[#171717] md:text-[52px] lg:text-[68px] lg:leading-[72px] lg:tracking-[-2px]">
 
               Crafting reliability
 
@@ -45,11 +45,7 @@ export default function PrecisionScale() {
 
             </h3>
 
-            <p className="mt-10
-max-w-[470px]
-text-[18px]
-leading-[38px]
-text-[#525252]">
+            <p className="mt-6 max-w-full text-[16px] leading-8 text-[#525252] lg:mt-10 lg:max-w-[470px] lg:text-[18px] lg:leading-[38px]">
 
               Our manufacturing lines integrate advanced AI monitoring
               with pharmaceutical-grade robotics. Every diagnostic kit
@@ -61,7 +57,7 @@ text-[#525252]">
 
             {/* Stats */}
 
-            <div className="flex gap-16 mt-16">
+            <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:gap-12 lg:mt-16 lg:gap-16">
                               {/* Stat 1 */}
               <div className="flex items-start gap-5">
 
@@ -69,7 +65,7 @@ text-[#525252]">
 
 <div>
 
-  <h4 className="text-[44px] font-bold leading-none text-[#18B7F2]">
+  <h4 className="text-[36px] lg:text-[44px] font-bold leading-none text-[#18B7F2]">
     12M+
   </h4>
 
@@ -88,7 +84,7 @@ text-[#525252]">
 
 <div>
 
-  <h4 className="text-[54px] font-bold leading-none text-[#18B7F2]">
+  <h4 className="text-[42px] lg:text-[54px] font-bold leading-none text-[#18B7F2]">
     0.01%
   </h4>
 
@@ -112,11 +108,13 @@ text-[#525252]">
 src={manufactureImg}
 alt="Manufacturing"
 className="
-w-[600px]
-h-[620px]
-rounded-[34px]
+w-full
+max-w-[600px]
+rounded-[24px]
 object-cover
 shadow-[0_40px_80px_rgba(0,0,0,0.18)]
+lg:h-[620px]
+lg:rounded-[34px]
 "
 />
 
@@ -125,15 +123,22 @@ shadow-[0_40px_80px_rgba(0,0,0,0.18)]
 <div
 className="
 absolute
-bottom-[-34px]
-left-[-28px]
-w-[360px]
-rounded-[22px]
-bg-white
-px-7
-py-5
+bottom-4
+left-4
+right-4
+rounded-[18px]
+bg-white/90
+px-5
+py-4
 shadow-[0_20px_50px_rgba(0,0,0,0.18)]
-opacity-80
+backdrop-blur
+lg:bottom-[-34px]
+lg:left-[-28px]
+lg:right-auto
+lg:w-[360px]
+lg:rounded-[22px]
+lg:px-7
+lg:py-5
 "
 >
 
@@ -144,13 +149,13 @@ opacity-80
   className="text-[#111]"
 />
 
-<span className="text-lg font-semibold text-[#1E1E1E]">
+<span className="text-base font-semibold text-[#1E1E1E] lg:text-lg">
   Quality Verified
 </span>
 
 </div>
 
-<p className="mt-4 text-[16px] leading-7 text-[#666]">
+<p className="mt-3 text-[14px] leading-6 text-[#666] lg:mt-4 lg:text-[16px] lg:leading-7">
 Every production batch undergoes
 multi-stage validation before
 leaving our facility.
