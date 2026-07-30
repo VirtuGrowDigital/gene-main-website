@@ -13,78 +13,27 @@ import {
   } from "lucide-react";
 
 const jobs = [
+    // {
+    //   id: 1,
+    //   category: "Research",
+    //   title: "Senior Molecular Biologist",
+    //   location: "Zurich, Switzerland",
+    //   type: "Full Time",
+    //   experience: "5+ Years",
+    //   salary: "$90K - $120K",
+    //   posted: "2 days ago",
+    //   description:
+    //     "Lead molecular diagnostics research and develop innovative IVD solutions for global healthcare markets.",
+    //   responsibilities: [
+    //     "Lead molecular biology projects",
+    //     "Develop diagnostic assays",
+    //     "Mentor junior scientists",
+    //     "Collaborate with R&D teams",
+    //   ],
+    // },
     {
-      id: 1,
-      category: "Research",
-      title: "Senior Molecular Biologist",
-      location: "Zurich, Switzerland",
-      type: "Full Time",
-      experience: "5+ Years",
-      salary: "$90K - $120K",
-      posted: "2 days ago",
-      description:
-        "Lead molecular diagnostics research and develop innovative IVD solutions for global healthcare markets.",
-      responsibilities: [
-        "Lead molecular biology projects",
-        "Develop diagnostic assays",
-        "Mentor junior scientists",
-        "Collaborate with R&D teams",
-      ],
-    },
-    {
-      id: 2,
-      category: "Engineering",
-      title: "Software Engineer (React)",
-      location: "Bangalore, India",
-      type: "Full Time",
-      experience: "3+ Years",
-      salary: "₹12L - ₹18L",
-      posted: "5 days ago",
-      description:
-        "Build scalable healthcare web applications using React and modern frontend technologies.",
-      responsibilities: [
-        "Develop React applications",
-        "Work with REST APIs",
-        "Write reusable components",
-        "Collaborate with designers",
-      ],
-    },
-    {
-      id: 3,
-      category: "Manufacturing",
-      title: "Production Executive",
-      location: "Pune, India",
-      type: "Full Time",
-      experience: "2+ Years",
-      salary: "₹6L - ₹9L",
-      posted: "1 week ago",
-      description:
-        "Ensure smooth production while maintaining GMP compliance.",
-      responsibilities: [
-        "Monitor production lines",
-        "Maintain GMP standards",
-        "Coordinate with QA",
-        "Prepare reports",
-      ],
-    },
-    {
-      id: 4,
-      category: "Sales",
-      title: "Regional Sales Manager",
-      location: "Dubai, UAE",
-      type: "Hybrid",
-      experience: "6+ Years",
-      salary: "$70K - $95K",
-      posted: "Yesterday",
-      description:
-        "Drive regional sales growth across healthcare markets.",
-      responsibilities: [
-        "Generate leads",
-        "Manage distributors",
-        "Meet sales targets",
-        "Develop client relationships",
-      ],
-    },
+     title: "No Open Roles"
+    }
   ];
 
 const departments = [

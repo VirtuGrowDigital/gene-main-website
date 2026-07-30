@@ -57,10 +57,10 @@ export default function RegionalInfrastructure() {
 
         {/* Grid */}
 
-        <div className="mt-10 grid gap-6 lg:mt-12 lg:grid-cols-[734px_360px]">
+        <div className="mt-10 grid grid-cols-1 gap-6 lg:mt-12 lg:grid-cols-[minmax(0,2fr)_minmax(340px,1fr)]">
           {/* Image Card */}
 
-          <div className="relative overflow-hidden rounded-[24px] shadow-xl h-[420px] sm:h-[520px] lg:h-[598px]">
+          <div className="relative h-[380px] overflow-hidden rounded-[24px] shadow-xl sm:h-[480px] lg:h-[598px]">
             <img
               src={hubImage}
               alt=""
@@ -114,58 +114,58 @@ export default function RegionalInfrastructure() {
 
           {/* Right Cards */}
 
-          <div className="flex flex-col gap-6 lg:h-[598px] lg:justify-between">
+          <div className="flex flex-col gap-6 lg:h-[598px]">
             {/* Card 1 */}
 
-            <div className="rounded-[24px] bg-[#24BDF3] p-6 text-white lg:h-[286px] lg:p-7">
-              <Building2 className="mb-6" size={26} />
+            <div className="rounded-[24px] bg-[#24BDF3] p-6 text-white sm:p-7 lg:min-h-[286px]">
+            <Building2 className="mb-5" size={24} />
 
-              <h3 className="text-[22px] font-semibold leading-[1.25]">
-                EMEA
-                <br />
-                Operations
-              </h3>
+<h3 className="text-[20px] font-semibold leading-[1.25] sm:text-[22px]">
+  EMEA
+  <br />
+  Operations
+</h3>
 
-              <p className="mt-5 text-[14px] leading-7 text-white/90">
-                Regulatory compliance at the heart of Europe.
-                Standardizing diagnostics for 22 regional partners.
-              </p>
+<p className="mt-4 text-[14px] leading-6 text-white/90 sm:mt-5 sm:leading-7">
+  Regulatory compliance at the heart of Europe.
+  Standardizing diagnostics for 22 regional partners.
+</p>
 
-              <div className="mt-8 flex items-center gap-2 text-[14px] font-medium">
-                <ShieldCheck size={18} />
-                GDPR &amp; IVDR Compliant
-              </div>
+<div className="mt-auto pt-4 flex items-center gap-2 text-[13px] font-medium sm:text-[14px]">
+  <ShieldCheck size={18} />
+  GDPR &amp; IVDR Compliant
+</div>
             </div>
 
             {/* Card 2 */}
 
-            <div className="rounded-[24px] bg-[#24BDF3] p-6 text-white lg:h-[286px] lg:p-7">
-              <Plane className="mb-6" size={26} />
+            <div className="rounded-[24px] bg-[#24BDF3] p-6 text-white sm:p-7 lg:min-h-[286px]">
+            <Plane className="mb-5" size={24} />
 
-              <h3 className="text-[22px] font-semibold leading-[1.25]">
-                Americas
-                <br />
-                Access
-              </h3>
+<h3 className="text-[20px] font-semibold leading-[1.25] sm:text-[22px]">
+  Americas
+  <br />
+  Access
+</h3>
 
-              <p className="mt-5 text-[14px] leading-7 text-white/90">
-                Full-scale distribution network across North and South America
-                with specialized cold-chain capability.
-              </p>
+<p className="mt-4 text-[14px] leading-6 text-white/90 sm:mt-5 sm:leading-7">
+  Full-scale distribution network across North and South America
+  with specialized cold-chain capability.
+</p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white/20 px-4 py-2 text-[12px]">
-                  Cold Chain
-                </span>
+<div className="mt-auto pt-3 flex flex-wrap gap-2 sm:gap-3">
+  <span className="rounded-full bg-white/20 px-3 py-2 text-[11px] sm:px-4 sm:text-[12px]">
+    Cold Chain
+  </span>
 
-                <span className="rounded-full bg-white/20 px-4 py-2 text-[12px]">
-                  Next Day Air
-                </span>
+  <span className="rounded-full bg-white/20 px-3 py-2 text-[11px] sm:px-4 sm:text-[12px]">
+    Next Day Air
+  </span>
 
-                <span className="rounded-full bg-white/20 px-4 py-2 text-[12px]">
-                  24/7 Monitoring
-                </span>
-              </div>
+  <span className="rounded-full bg-white/20 px-3 py-2 text-[11px] sm:px-4 sm:text-[12px]">
+    24/7 Monitoring
+  </span>
+</div>
             </div>
           </div>
         </div>

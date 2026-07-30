@@ -1,5 +1,6 @@
 import heroBg from "../assets/images/hero-bg.png";
 import heroBgMobile from "../assets/images/home-bg-mobile.png";
+import productCatalogue from "../assets/images/GeneBio Healthcare Products_20240930_134047_0000.pdf";
 
 export default function ProductHero() {
   return (
@@ -49,9 +50,14 @@ export default function ProductHero() {
 
           {/* Button */}
           <div className="mt-10">
-            <button className="flex h-14 w-full items-center justify-center rounded-full bg-[#20C9EE] text-[16px] font-semibold text-[#00141d] transition hover:bg-[#14B8E5] lg:inline-flex lg:h-auto lg:w-auto lg:rounded-[7px] lg:px-7 lg:py-3 lg:text-[11px] lg:text-white">
-              Explore Portfolio
-            </button>
+          <a
+  href={productCatalogue}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex h-14 w-full items-center justify-center rounded-full bg-[#20C9EE] text-[16px] font-semibold text-[#00141d] transition hover:bg-[#14B8E5] lg:inline-flex lg:h-auto lg:w-auto lg:rounded-[7px] lg:px-7 lg:py-3 lg:text-[11px] lg:text-white"
+>
+  Explore Portfolio
+</a>
           </div>
 
         </div>

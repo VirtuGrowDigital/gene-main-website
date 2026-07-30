@@ -42,7 +42,7 @@ const ContactSection = () => {
                   </p>
 
                   <p className="mt-1 text-[16px] font-semibold text-[#191C1D]">
-                    support@genebiohealthcare.com
+                    sp@genebiohealthcare.com
                   </p>
 
                 </div>
@@ -68,7 +68,7 @@ const ContactSection = () => {
                   </p>
 
                   <p className="mt-1 text-[16px] font-semibold text-[#191C1D]">
-                    +91 98765 43210
+                    1800-8911-499
                   </p>
 
                 </div>

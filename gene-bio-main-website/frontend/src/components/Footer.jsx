@@ -34,9 +34,16 @@ export default function Footer() {
               className="h-[62px] object-contain"
             />
 
-            <p className="mt-8 max-w-[430px] text-[17px] leading-8 text-[#E1E1E1]">
-              Pioneering the next generation of precision diagnostics to
-              empower clinicians and safeguard global public health.
+            <p className="mt-8 max-w-[430px] font-extralight text-[17px] leading-8 text-[#E1E1E1]">
+              Reg. Off.:Sec-F, E-635 LDA Colony, Kanpur Road, Lucknow-226012
+              <br/>
+              Production Unit: A-6/1A/2,
+              Industrial Area, Kursi Road, Distt: Barabanki(U.P)225302
+             
+              <br/>
+              sp@genebiohealthcare.com
+              <br/>
+              +91 9236392922
             </p>
 
             <div className="mt-8 flex gap-3">

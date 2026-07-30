@@ -38,11 +38,11 @@ export default function CultureSection() {
 
               <div>
                 <h4 className="text-[18px] font-semibold text-[#202020]">
-                  Dr. Elena Vance
+                  Dr. Arun Kumar Srivastava
                 </h4>
 
                 <p className="mt-1 text-[15px] text-[#666]">
-                  Chief of People Operations
+                  Director of GeneBio Healthcare
                 </p>
               </div>
             </div>

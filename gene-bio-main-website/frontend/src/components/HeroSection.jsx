@@ -1,5 +1,6 @@
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import heroVideo from "../assets/videos/hero-video.mov";
+import heroVideo from "../assets/videos/hero.MOV";
 import mobileHeroBg from "../assets/images/home-bg-mobile.png";
 
 const HeroSection = () => {
@@ -65,21 +66,21 @@ const HeroSection = () => {
           </p>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row lg:flex-row">
-            <a
-              href="#products"
-              className="flex h-[54px] w-full items-center justify-center rounded-full bg-[#20c9ee] text-[14px] font-semibold text-[#00141d] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#10b9dc] lg:h-auto lg:w-auto lg:rounded-[8px] lg:px-7 lg:py-3 lg:text-[11px] lg:text-white"
-            >
-              Explore Solutions
-            </a>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+  <a
+    href="#products"
+    className="flex h-[54px] w-full items-center justify-center rounded-full bg-[#20c9ee] text-[14px] font-semibold text-[#00141d] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#10b9dc] lg:h-auto lg:w-auto lg:rounded-[8px] lg:px-7 lg:py-3 lg:text-[11px] lg:text-white"
+  >
+    Explore Solutions
+  </a>
 
-            <a
-              href="#certifications"
-              className="flex h-[54px] w-full items-center justify-center rounded-full border border-white/40 bg-transparent text-[14px] font-semibold text-white transition-all duration-300 hover:border-[#20c9ee] hover:bg-[#20c9ee] lg:h-auto lg:w-auto lg:rounded-[8px] lg:border-[#20c9ee] lg:px-7 lg:py-3 lg:text-[11px]"
-            >
-              Our Certifications
-            </a>
-          </div>
+  <a
+  href="/company/certifications"
+  className="flex h-[54px] w-full items-center justify-center rounded-full border border-white/40 bg-transparent text-[14px] font-semibold text-white transition-all duration-300 hover:border-[#20c9ee] hover:bg-[#20c9ee] lg:h-auto lg:w-auto lg:rounded-[8px] lg:border-[#20c9ee] lg:px-7 lg:py-3 lg:text-[11px]"
+>
+  Our Certifications
+</a>
+</div>
         </div>
       </div>
 
