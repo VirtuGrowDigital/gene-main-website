@@ -1,5 +1,9 @@
-import { Globe, Mail } from "lucide-react";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
+import { Mail } from "lucide-react";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+} from "react-icons/fa6";
 
 import logo from "../assets/images/genebio-logo.png";
 import dnaBg from "../assets/images/DNA logo background.png";
@@ -49,21 +53,23 @@ export default function Footer() {
             <div className="mt-8 flex gap-3">
 
               <a
-                href="#"
+                href="https://www.facebook.com/share/1CoSdFA7Ti/"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 hover:border-[#24B8F4] hover:bg-[#24B8F4] duration-300"
               >
                 <FaFacebookF size={14} />
               </a>
 
               <a
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 hover:border-[#24B8F4] hover:bg-[#24B8F4] duration-300"
-              >
-                <Globe size={15} />
-              </a>
+  href="https://www.instagram.com/genebiohealthcareindia?igsh=NnJwMmh6eXUwbng4"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 hover:border-[#24B8F4] hover:bg-[#24B8F4] duration-300"
+>
+  <FaInstagram size={15} />
+</a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/company/genebio-healthcare/"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 hover:border-[#24B8F4] hover:bg-[#24B8F4] duration-300"
               >
                 <FaLinkedinIn size={14} />
