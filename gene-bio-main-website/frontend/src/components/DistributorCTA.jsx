@@ -23,12 +23,7 @@ const DistributorCTA = () => {
             Become a Distributor
           </button>
 
-          <button
-            type="button"
-            className="min-w-[150px] rounded-[10px] border border-white/50 bg-white/10 px-6 py-3 text-[11px] font-semibold text-white transition hover:bg-white/20"
-          >
-            Request Catalog
-          </button>
+      
 
         </div>
       </div>

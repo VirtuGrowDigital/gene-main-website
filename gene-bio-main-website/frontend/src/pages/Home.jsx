@@ -18,7 +18,7 @@ const Home = () => {
       <HeroSection />
       <TrustBar/>
       <GeneBioAdvantage/>
-      <InnovationSpotlight/>
+      {/* <InnovationSpotlight/> */}
       <ManufacturingExcellence/>
       <ResearchDevelopment/>
       <GlobalDiagnostics/>

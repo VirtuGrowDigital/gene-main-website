@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import banner from "../assets/images/Speech.png";
+import banner from "../assets/images/exebition.jpeg";
 
 export default function FeaturedEvent() {
-  // 👉 Change this to your actual event date
-  const eventDate = new Date("2026-12-20T09:00:00").getTime();
+  // Medical Fair India 2026
+  // 17 September 2026
+  const eventDate = new Date("2026-09-17T00:00:00").getTime();
 
   const calculateTimeLeft = () => {
     const now = new Date().getTime();
@@ -71,16 +72,22 @@ export default function FeaturedEvent() {
 
           <div className="absolute left-8 top-8 max-w-[580px] text-white md:left-12 md:top-12 lg:left-20 lg:top-20">
             <span className="rounded-full border border-white/25 bg-white/10 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] backdrop-blur">
-              Flagship Event
+              Coming Soon
             </span>
 
-            <h2 className="mt-8 text-[42px] font-bold leading-[1.05] md:text-[56px] lg:text-[72px]">
-              GeneBio Innovation Summit 2024
+            <h2 className="mt-8 text-[32px] font-bold leading-[1.05] md:text-[36px] lg:text-[42px]">
+              GeneBio Innovation Summit 2026
             </h2>
 
             <p className="mt-6 max-w-[520px] text-[16px] leading-8 text-white/80">
-              Join the world's leading pathologists and biotechnology pioneers
-              for a three-day intensive on clinical precision.
+            The leaders shaping the future of healthcare are coming together under one roof!.
+            <br></br>
+            From cutting-edge medical devices and advanced hospital equipment to breakthrough health-tech innovations, explore top industry brands showcase their latest solutions at Medical Fair India 2026 in Mumbai!
+           <br></br>
+           <span className="text-blue-200">
+           Hall 4, Bombay Exhibition Center, Goregaon (E), Mumbai
+           17–19 September 2026
+           </span>
             </p>
 
             <motion.button

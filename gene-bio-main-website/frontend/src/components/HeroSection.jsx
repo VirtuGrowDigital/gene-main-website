@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import heroVideo from "../assets/videos/hero.MOV";
 import mobileHeroBg from "../assets/images/home-bg-mobile.png";
@@ -38,49 +38,56 @@ const HeroSection = () => {
       {/* ========================= */}
       {/* Hero Content */}
       {/* ========================= */}
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1180px] items-start px-6 pt-48 pb-12 md:px-8 lg:h-full lg:items-center lg:px-8 lg:pt-0 lg:pb-0">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1180px] items-start px-6 pb-12 pt-48 md:px-8 lg:h-full lg:items-center lg:px-8 lg:pb-0 lg:pt-0">
         <div className="w-full max-w-[520px]">
+
           {/* Label */}
           <div className="mb-5 inline-flex rounded-full border border-[#10c8e8]/30 bg-[#032a35]/60 px-4 py-2 backdrop-blur-md">
             <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#36d8f4]">
-            Leading IVD Manufacturer & Diagnostic Solutions
+              Leading IVD Manufacturer & Diagnostic Solutions
             </span>
           </div>
 
           {/* Heading */}
           <h1 className="text-[42px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[46px] md:text-[50px] lg:text-[54px]">
-          Precision Diagnostics 
+            Precision Diagnostics
+            <br />
+            Engineered for
+            <br />
 
-            <br />
-            Engineered for 
-            <br />
             <span className="text-[#20c9ee]">
-            Global 
+              Global
               <br className="lg:hidden" /> Healthcare
             </span>
           </h1>
 
           {/* Description */}
           <p className="mt-6 max-w-[420px] text-[14px] leading-7 text-white/75 md:text-[15px] lg:max-w-[450px] lg:text-[14px] lg:leading-[1.8]">
-          Empowering clinical laboratories, hospitals, and healthcare systems with high-accuracy In-Vitro Diagnostic (IVD) kits, rapid screening tests, and biochemistry reagents manufactured in India.
+            Empowering clinical laboratories, hospitals, and healthcare systems
+            with high-accuracy In-Vitro Diagnostic (IVD) kits, rapid screening
+            tests, and biochemistry reagents manufactured in India.
           </p>
 
           {/* Buttons */}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-  <a
-    href="#products"
-    className="flex h-[54px] w-full items-center justify-center rounded-full bg-[#20c9ee] text-[14px] font-semibold text-[#00141d] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#10b9dc] lg:h-auto lg:w-auto lg:rounded-[8px] lg:px-7 lg:py-3 lg:text-[11px] lg:text-white"
-  >
-    Explore Products
-  </a>
 
-  <a
-  href="/company/certifications"
-  className="flex h-[54px] w-full items-center justify-center rounded-full border border-white/40 bg-transparent text-[14px] font-semibold text-white transition-all duration-300 hover:border-[#20c9ee] hover:bg-[#20c9ee] lg:h-auto lg:w-auto lg:rounded-[8px] lg:border-[#20c9ee] lg:px-7 lg:py-3 lg:text-[11px]"
->
-  Our Certifications
-</a>
-</div>
+            {/* Explore Products */}
+            <Link
+              to="/products"
+              className="flex h-[54px] w-full items-center justify-center rounded-full bg-[#20c9ee] text-[14px] font-semibold text-[#00141d] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#10b9dc] lg:h-auto lg:w-auto lg:rounded-[8px] lg:px-7 lg:py-3 lg:text-[11px] lg:text-white"
+            >
+              Explore Products
+            </Link>
+
+            {/* Our Certifications */}
+            <Link
+              to="/company/certifications"
+              className="flex h-[54px] w-full items-center justify-center rounded-full border border-white/40 bg-transparent text-[14px] font-semibold text-white transition-all duration-300 hover:border-[#20c9ee] hover:bg-[#20c9ee] lg:h-auto lg:w-auto lg:rounded-[8px] lg:border-[#20c9ee] lg:px-7 lg:py-3 lg:text-[11px]"
+            >
+              Our Certifications
+            </Link>
+
+          </div>
         </div>
       </div>
 

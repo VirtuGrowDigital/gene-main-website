@@ -22,14 +22,8 @@ const trustItems = [
     label: "10Cr+ KITS DELIVERED",
     icon: PackageCheck,
   },
-  {
-    label: "GMP CERTIFIED",
-    icon: BadgeCheck,
-  },
-  {
-    label: "ISO 13485",
-    icon: CircleCheck,
-  },
+
+  
 ];
 
 const TrustBar = () => {

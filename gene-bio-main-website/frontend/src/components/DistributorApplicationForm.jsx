@@ -1,6 +1,64 @@
-import { Upload } from "lucide-react";
+import { useState } from "react";
 
 export default function DistributorApplicationForm() {
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    setIsSubmitting(true);
+    setStatus("");
+
+    const formData = new FormData(event.target);
+
+    formData.append(
+      "access_key",
+      "cd6a1416-78d0-45f1-a8fc-f9a9cc237cce"
+    );
+
+    formData.append(
+      "subject",
+      "New Distributor Application - GeneBio Healthcare"
+    );
+
+    formData.append(
+      "from_name",
+      "GeneBio Healthcare Website"
+    );
+
+    try {
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus(
+          "Application submitted successfully! Our partnerships team will contact you soon."
+        );
+
+        event.target.reset();
+      } else {
+        setStatus(
+          data.message ||
+            "Something went wrong. Please try again."
+        );
+      }
+    } catch (error) {
+      setStatus(
+        "Unable to submit your application. Please try again later."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="bg-[#FAFBFC] py-24">
       <div className="mx-auto max-w-[1180px] px-5">
@@ -8,7 +66,6 @@ export default function DistributorApplicationForm() {
         {/* Heading */}
 
         <div className="text-center">
-
           <p className="text-[13px] font-semibold uppercase tracking-[0.3em] text-[#27BDF3]">
             Partnership Application
           </p>
@@ -23,14 +80,16 @@ export default function DistributorApplicationForm() {
             Fill out the information below and our partnerships team will
             contact you within 2–3 business days.
           </p>
-
         </div>
 
         {/* Form Card */}
 
         <div className="mt-16 rounded-[34px] bg-white p-12 shadow-[0_25px_70px_rgba(0,0,0,0.08)]">
 
-          <form className="space-y-8">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-8"
+          >
 
             {/* Row 1 */}
 
@@ -43,7 +102,9 @@ export default function DistributorApplicationForm() {
 
                 <input
                   type="text"
+                  name="full_name"
                   placeholder="John Doe"
+                  required
                   className="h-[58px] w-full rounded-xl border border-[#E5E7EB] px-5 outline-none transition focus:border-[#27BDF3]"
                 />
               </div>
@@ -55,7 +116,9 @@ export default function DistributorApplicationForm() {
 
                 <input
                   type="text"
+                  name="company_name"
                   placeholder="ABC Healthcare Pvt Ltd"
+                  required
                   className="h-[58px] w-full rounded-xl border border-[#E5E7EB] px-5 outline-none transition focus:border-[#27BDF3]"
                 />
               </div>
@@ -73,7 +136,9 @@ export default function DistributorApplicationForm() {
 
                 <input
                   type="email"
+                  name="email"
                   placeholder="name@company.com"
+                  required
                   className="h-[58px] w-full rounded-xl border border-[#E5E7EB] px-5 outline-none transition focus:border-[#27BDF3]"
                 />
               </div>
@@ -85,7 +150,9 @@ export default function DistributorApplicationForm() {
 
                 <input
                   type="tel"
+                  name="phone"
                   placeholder="+91 9876543210"
+                  required
                   className="h-[58px] w-full rounded-xl border border-[#E5E7EB] px-5 outline-none transition focus:border-[#27BDF3]"
                 />
               </div>
@@ -103,7 +170,9 @@ export default function DistributorApplicationForm() {
 
                 <input
                   type="text"
+                  name="country"
                   placeholder="India"
+                  required
                   className="h-[58px] w-full rounded-xl border border-[#E5E7EB] px-5 outline-none transition focus:border-[#27BDF3]"
                 />
               </div>
@@ -115,87 +184,74 @@ export default function DistributorApplicationForm() {
 
                 <input
                   type="text"
+                  name="years_in_distribution"
                   placeholder="10 Years"
+                  required
                   className="h-[58px] w-full rounded-xl border border-[#E5E7EB] px-5 outline-none transition focus:border-[#27BDF3]"
                 />
               </div>
 
             </div>
 
-            {/* Upload */}
-
-            <div>
-
-              <label className="mb-3 block text-sm font-semibold text-[#222]">
-                Company Profile
-              </label>
-
-              <label className="flex h-[140px] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#D7E7EF] transition hover:border-[#27BDF3]">
-
-                <Upload
-                  size={36}
-                  className="text-[#27BDF3]"
-                />
-
-                <p className="mt-4 text-[15px] font-medium text-[#444]">
-                  Click to upload Company Profile
-                </p>
-
-                <p className="mt-1 text-sm text-[#888]">
-                  PDF, DOC or PPT (Max 10MB)
-                </p>
-
-                <input
-                  type="file"
-                  className="hidden"
-                />
-
-              </label>
-
-            </div>
-
             {/* Message */}
 
             <div>
-
               <label className="mb-3 block text-sm font-semibold text-[#222]">
                 Tell us about your business
               </label>
 
               <textarea
+                name="message"
                 rows={6}
+                required
                 placeholder="Describe your distribution network, healthcare experience and business goals..."
                 className="w-full rounded-2xl border border-[#E5E7EB] p-5 outline-none transition focus:border-[#27BDF3]"
               />
-
             </div>
 
             {/* Checkbox */}
 
             <label className="flex items-center gap-3 text-[15px] text-[#555]">
-
               <input
                 type="checkbox"
+                name="consent"
+                value="I agree to be contacted by GeneBio Healthcare"
+                required
                 className="h-5 w-5 accent-[#27BDF3]"
               />
 
               I agree to be contacted by GeneBio Healthcare.
-
             </label>
+
+            {/* Status Message */}
+
+            {status && (
+              <p
+                className={`text-[14px] font-medium ${
+                  status.includes("successfully")
+                    ? "text-green-600"
+                    : "text-red-500"
+                }`}
+              >
+                {status}
+              </p>
+            )}
 
             {/* Submit */}
 
             <button
               type="submit"
-              className="rounded-xl bg-[#27BDF3] px-10 py-4 text-[16px] font-semibold text-white transition hover:bg-[#15AEE8]"
+              disabled={isSubmitting}
+              className="rounded-xl bg-[#27BDF3] px-10 py-4 text-[16px] font-semibold text-white transition hover:bg-[#15AEE8] disabled:cursor-not-allowed disabled:opacity-70"
             >
-              Submit Application
+              {isSubmitting
+                ? "Submitting Application..."
+                : "Submit Application"}
             </button>
 
           </form>
 
         </div>
-
       </div>
     </section>
   );

@@ -89,7 +89,7 @@ export default function BlogCard({
           to={`/resources/blogs/${slug}`}
           className="mt-6 flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#2CBDF5] transition hover:text-[#178EF2]"
         >
-          Learn More
+         Read Full Article
           <ArrowRight size={16} />
         </Link>
 

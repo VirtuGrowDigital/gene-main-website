@@ -35,7 +35,7 @@ export default function GlobalHero() {
             compromise on integrity.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          {/* <div className="mt-10 flex flex-wrap gap-4">
 
             <Link
               to="/contact"
@@ -51,7 +51,7 @@ export default function GlobalHero() {
               Partner Network
             </Link>
 
-          </div>
+          </div> */}
 
         </div>
 

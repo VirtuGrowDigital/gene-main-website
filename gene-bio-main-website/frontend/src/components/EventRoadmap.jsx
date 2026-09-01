@@ -11,49 +11,49 @@ import {
 const roadmap = [
   {
     id: 1,
-    month: "NOV",
-    year: "2024",
-    title: "MEDICA",
-    location: "Düsseldorf, Germany",
+    month: "07, 08, 09 August",
+    year: "2026",
+    title: "Indore medical expo",
+    location: "Indore, Madhya Pradesh",
     venue: "Hall 3 / Booth B42",
-    status: "Upcoming",
+    status: "Completed",
   },
   {
     id: 2,
-    month: "JAN",
-    year: "2025",
-    title: "Arab Health",
-    location: "Dubai, UAE",
-    venue: "World Trade Centre",
-    status: "Registration Open",
+    month: "7 th July",
+    year: "2026",
+    title: "GeneBio foundation day ",
+    location: "Lucknow, Uttar Pradesh",
+    venue: "GeneBio Health Production Unit",
+    status: "Completed",
   },
-  {
-    id: 3,
-    month: "MAR",
-    year: "2025",
-    title: "AACC Summit",
-    location: "Chicago, USA",
-    venue: "McCormick Place",
-    status: "Coming Soon",
-  },
-  {
-    id: 4,
-    month: "MAY",
-    year: "2025",
-    title: "Diagnostics Expo",
-    location: "Singapore",
-    venue: "Marina Bay Sands",
-    status: "Upcoming",
-  },
-  {
-    id: 5,
-    month: "JUL",
-    year: "2025",
-    title: "Global Healthcare",
-    location: "Tokyo, Japan",
-    venue: "Tokyo Big Sight",
-    status: "Upcoming",
-  },
+  // {
+  //   id: 3,
+  //   month: "MAR",
+  //   year: "2025",
+  //   title: "AACC Summit",
+  //   location: "Chicago, USA",
+  //   venue: "McCormick Place",
+  //   status: "Coming Soon",
+  // },
+  // {
+  //   id: 4,
+  //   month: "MAY",
+  //   year: "2025",
+  //   title: "Diagnostics Expo",
+  //   location: "Singapore",
+  //   venue: "Marina Bay Sands",
+  //   status: "Upcoming",
+  // },
+  // {
+  //   id: 5,
+  //   month: "JUL",
+  //   year: "2025",
+  //   title: "Global Healthcare",
+  //   location: "Tokyo, Japan",
+  //   venue: "Tokyo Big Sight",
+  //   status: "Upcoming",
+  // },
 ];
 
 export default function EventRoadmap() {
@@ -252,17 +252,7 @@ export default function EventRoadmap() {
 
                     {/* Button */}
 
-                    <button
-                      className={`mt-10 w-full rounded-xl py-3.5 text-sm font-semibold transition-all duration-300
-
-                      ${
-                        active
-                          ? "bg-[#29BDF4] text-white hover:bg-[#18A8DE]"
-                          : "border border-[#29BDF4] text-[#29BDF4] hover:bg-[#29BDF4] hover:text-white"
-                      }`}
-                    >
-                      View Details
-                    </button>
+                   
 
                   </div>
 

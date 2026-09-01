@@ -1,7 +1,7 @@
-import mainHall from "../assets/images/Main Hall.png";
-import interaction from "../assets/images/Interaction.png";
-import speech from "../assets/images/Speech.png";
-import networking from "../assets/images/Networking.png";
+import mainHall from "../assets/images/awards2.jpeg";
+import interaction from "../assets/images/awards.jpeg";
+import speech from "../assets/images/exebition4.jpeg";
+import networking from "../assets/images/exebition2.jpeg";
 
 export default function GallerySection() {
   return (

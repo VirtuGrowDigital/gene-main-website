@@ -3,7 +3,7 @@ import TrendingSidebar from "./TrendingSidebar";
 import NewsletterCard from "./NewsletterCard";
 import ResourcesCard from "./ResourcesCard";
 
-import blog1 from "../assets/images/blog1.png";
+import blog1 from "../assets/images/malaria.jpeg";
 import blog2 from "../assets/images/blog2.png";
 import blog3 from "../assets/images/blog3.png";
 import blog4 from "../assets/images/blog4.png";

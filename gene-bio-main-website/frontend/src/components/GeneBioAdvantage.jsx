@@ -6,6 +6,7 @@ import {
     Droplets,
     Globe2,
   } from "lucide-react";
+  import { Link } from "react-router-dom";
   
   import diagnosticLab from "../assets/images/diagnostic-lab.png";
   
@@ -113,18 +114,18 @@ import {
         with laboratory-grade precision.
       </p>
 
-      <a
-        href="#products"
-        className="
-          mt-5 inline-flex w-fit
-          rounded-[6px] bg-[#16BEEA]
-          px-5 py-2.5
-          text-[10px] font-semibold text-white
-          transition hover:bg-[#0BAFD8]
-        "
-      >
-        View Collection
-      </a>
+      <Link
+  to="/company/certifications"
+  className="
+    mt-5 inline-flex w-fit
+    rounded-[6px] bg-[#16BEEA]
+    px-5 py-2.5
+    text-[10px] font-semibold text-white
+    transition hover:bg-[#0BAFD8]
+  "
+>
+  View Collection
+</Link>
     </div>
 
     {/* Lab Image */}
