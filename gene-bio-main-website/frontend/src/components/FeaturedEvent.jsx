@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import banner from "../assets/images/speech.png";
+import banner from "../assets/images/Speech.png";
 
 export default function FeaturedEvent() {
   // 👉 Change this to your actual event date

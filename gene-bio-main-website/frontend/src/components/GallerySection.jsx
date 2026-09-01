@@ -1,6 +1,6 @@
 import mainHall from "../assets/images/Main Hall.png";
 import interaction from "../assets/images/Interaction.png";
-import speech from "../assets/images/speech.png";
+import speech from "../assets/images/Speech.png";
 import networking from "../assets/images/Networking.png";
 
 export default function GallerySection() {
