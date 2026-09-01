@@ -15,6 +15,8 @@ import BulkPricing from "./pages/BulkPricing";
 import Blogs from "./pages/Blogs";
 import Events from "./pages/Events";
 
+import BlogDetails from "./pages/BlogDetails";
+
 import Careers from "./pages/Careers";
 
 function App() {
@@ -28,18 +30,22 @@ function App() {
 
       {/* Company */}
       <Route path="/company/about" element={<About />} />
+
       <Route
         path="/company/manufacturing"
         element={<Manufacturing />}
       />
+
       <Route
         path="/company/certifications"
         element={<Certifications />}
       />
+
       <Route
         path="/company/gallery"
         element={<Gallery />}
       />
+
       <Route
         path="/company/global-presence"
         element={<GlobalPresence />}
@@ -50,16 +56,25 @@ function App() {
         path="/partners/distributor"
         element={<BecomeDistributor />}
       />
+
       <Route
         path="/partners/bulk-pricing"
         element={<BulkPricing />}
       />
 
-      {/* Resources */}
+      {/* Blogs */}
       <Route
         path="/resources/blogs"
         element={<Blogs />}
       />
+
+      {/* Blog Details - Dynamic Route */}
+      <Route
+        path="/resources/blogs/:slug"
+        element={<BlogDetails />}
+      />
+
+      {/* Events */}
       <Route
         path="/resources/events"
         element={<Events />}

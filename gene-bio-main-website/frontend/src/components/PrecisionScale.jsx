@@ -27,19 +27,19 @@ export default function PrecisionScale() {
 
           <h3 className="text-[38px] font-bold leading-[1.1] tracking-[-1px] text-[#171717] md:text-[52px] lg:text-[68px] lg:leading-[72px] lg:tracking-[-2px]">
 
-              Crafting reliability
+          Uncompromising  
 
               <br />
 
-              through
+              Quality Standards
 
               <span className="text-[#18B7F2]">
 
-                {" "}Automated
+                {" "}Backed by 
 
                 <br />
 
-                Integrity.
+                Global Certifications
 
               </span>
 
@@ -47,11 +47,7 @@ export default function PrecisionScale() {
 
             <p className="mt-6 max-w-full text-[16px] leading-8 text-[#525252] lg:mt-10 lg:max-w-[470px] lg:text-[18px] lg:leading-[38px]">
 
-              Our manufacturing lines integrate advanced AI monitoring
-              with pharmaceutical-grade robotics. Every diagnostic kit
-              that leaves our floor undergoes 1,200 automated checks,
-              ensuring that when a life is on the line, our accuracy is
-              never in question.
+            Quality in diagnostics directly impacts clinical treatment. GeneBio Healthcare operates under strict Medical Device Quality Management Systems (MD-QMS) to guarantee safety, specificity, and batch reproducibility.
 
             </p>
 

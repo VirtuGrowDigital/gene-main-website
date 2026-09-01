@@ -51,10 +51,10 @@ export default function CompanyIntro() {
             variants={fadeUp}
             className="text-[44px] font-bold leading-[1.2] text-[#232323] lg:text-[56px]"
           >
-            Transforming Diagnostics Through
-            <span className="text-[#17A8E8]"> Science</span>,
-            <span className="text-[#17A8E8]"> Innovation</span> &
-            <span className="text-[#17A8E8]"> Trust</span>
+           Advancing Diagnostic   
+            <span className="text-[#17A8E8]"> Precision</span>
+            <span className="text-[#17A8E8]"> to Empower</span> 
+            <span className="text-[#17A8E8]"> Clinical Decisions</span>
           </motion.h2>
 
           {/* Content */}
@@ -64,21 +64,12 @@ export default function CompanyIntro() {
             className="mt-10 space-y-7 text-[18px] leading-9 text-[#666666]"
           >
             <motion.p variants={fadeUp}>
-              GeneBio Healthcare Pvt. Ltd. is an innovation-driven healthcare
-              company focused on delivering advanced
-              <span className="font-semibold text-[#222]">
-                {" "}
-                In-Vitro Diagnostic (IVD)
-              </span>{" "}
-              solutions that empower clinicians, laboratories and healthcare
-              professionals across the globe.
+            Established in 2020 and headquartered in Lucknow, Uttar Pradesh, GeneBio Healthcare Pvt. Ltd. was founded with a singular objective: to manufacture clinical-grade diagnostic tests that eliminate reliance on diagnostic imports while maintaining uncompromising global quality benchmarks.
+
             </motion.p>
 
             <motion.p variants={fadeUp}>
-              Combining cutting-edge biotechnology with precision manufacturing,
-              our product portfolio spans rapid diagnostics, molecular testing,
-              serology, microbiology and laboratory consumables, ensuring
-              dependable results for every stage of patient care.
+            Operating an advanced manufacturing and cleanroom facility in the Barabanki industrial corridor, GeneBio produces millions of rapid diagnostic kits, ELISA assays, biochemistry reagents, and molecular sample preservation products each month. Every lot manufactured undergoes stringent multi-stage verification to ensure precision at the point of care.
             </motion.p>
 
             <motion.p variants={fadeUp}>

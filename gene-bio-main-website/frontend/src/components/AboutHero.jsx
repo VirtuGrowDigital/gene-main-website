@@ -87,12 +87,12 @@ export default function AboutHero() {
             variants={fadeUp}
             className="text-[38px] font-bold leading-[1.15] tracking-[-0.02em] text-white md:text-[48px] lg:text-[54px]"
           >
-            Pioneering the Next
+           IVD 
             <br />
             <span className="text-[#20C9EE]">
-              Generation
+           Manufacturing 
             </span>{" "}
-            of Diagnostics
+            Company in India
           </motion.h1>
 
           {/* Description */}
@@ -101,10 +101,7 @@ export default function AboutHero() {
             variants={fadeUp}
             className="mt-6 max-w-[450px] text-[13px] leading-[1.8] text-white/70 md:text-[14px]"
           >
-            At GeneBio, we bridge the gap between complex biotechnology and
-            clinical accessibility, delivering molecular excellence at a
-            global scale through innovation, precision, and scientific
-            excellence.
+            Developed in collaboration with premier research institutions like CSIR-CDRI, GeneBio Healthcare manufactures indigenized, point-of-care diagnostic assays and specimen preservation systems. We combine rigorous analytical validation with scalable manufacturing to support hospitals, pathology networks, and national health programs.
           </motion.p>
 
           {/* Button */}

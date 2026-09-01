@@ -11,6 +11,7 @@ import ResearchDevelopment from "../components/ResearchDevelopment";
 import TrustBar from "../components/TrustBar";
 import TrustCompliance from "../components/TrustCompliance";
 
+
 const Home = () => {
   return (
     <main>

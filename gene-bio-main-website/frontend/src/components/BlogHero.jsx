@@ -58,7 +58,7 @@ export default function BlogHero() {
           {/* Description */}
 
           <p className="mt-6 max-w-[560px] text-[15px] leading-7 text-white/80 md:text-[16px] lg:mt-8 lg:text-[18px] lg:leading-9">
-            Exploring the intersection of molecular diagnostics,
+            Exploring the intersection of Rapid test kits,
             clinical innovation and the global transformation
             of precision medicine.
           </p>

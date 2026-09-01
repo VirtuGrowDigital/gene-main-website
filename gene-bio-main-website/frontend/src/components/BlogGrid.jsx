@@ -11,76 +11,75 @@ import blog4 from "../assets/images/blog4.png";
 const blogs = [
   {
     image: blog1,
-    author: "Dr. Elena Smith",
-    date: "May 12, 2024",
+    author: "GeneBio Healthcare",
+    date: "August 30, 2026",
     readTime: "8 min read",
-    title: "Scaling Global RNA Production for mRNA",
-    description:
-      "Examining the logistical challenges and scientific breakthroughs in mRNA cold-chain stability for tropical regions.",
+    slug: "swine-flu-h1n1-surge-in-lucknow",
+    title:
+      "Swine Flu (H1N1) Surge in Lucknow: Clinical Assessment, High-Risk Markers, and Diagnostic Protocols",
+    description: `With regional hospitals across Lucknow—including SGPGI (Sanjay Gandhi Post Graduate Institute of Medical Sciences), RMLIMS, and King George’s Medical University (KGMU)—reporting admissions for Influenza A (H1N1), respiratory illness surveillance is once again in sharp focus.
+  
+  While the term "Swine Flu" often triggers public anxiety, medical microbiologists and the Indian Council of Medical Research (ICMR) confirm that H1N1 (specifically the A/H1N1 pdm09 strain) now circulates as an endemic seasonal influenza virus.
+  
+  Accurate diagnosis, standardized sample collection, and clear risk stratification are critical to managing patient outcomes without straining diagnostic infrastructure.`,
   },
-  {
-    image: blog2,
-    author: "Marcus Chen",
-    date: "May 09, 2024",
-    readTime: "6 min read",
-    title: "AI-Driven Diagnostics: Beyond the Hype",
-    description:
-      "How machine learning models are improving patient outcomes in early-stage oncology screening.",
-  },
-  {
-    image: blog3,
-    author: "Sarah Jenkins",
-    date: "Apr 29, 2024",
-    readTime: "10 min read",
-    title: "The Ethics of Genomic Data Privacy",
-    description:
-      "Navigating patient consent in the era of large-scale bio-banking and DNA analytics.",
-  },
-  {
-    image: blog4,
-    author: "Robert Vance",
-    date: "Apr 20, 2024",
-    readTime: "6 min read",
-    title: "Respiratory Panel Innovation: A New Era",
-    description:
-      "Why multi-pathogen testing is becoming the gold standard for seasonal respiratory surveillance.",
-  },
+  // {
+  //   slug: "ai-driven-diagnostics",
+  //   image: blog2,
+  //   author: "Marcus Chen",
+  //   date: "May 09, 2024",
+  //   readTime: "6 min read",
+  //   title: "AI-Driven Diagnostics: Beyond the Hype",
+  //   description:
+  //     "How machine learning models are improving patient outcomes in early-stage oncology screening.",
+  // },
+  // {
+  //   slug: "genomic-data-privacy",
+  //   image: blog3,
+  //   author: "Sarah Jenkins",
+  //   date: "Apr 29, 2024",
+  //   readTime: "10 min read",
+  //   title: "The Ethics of Genomic Data Privacy",
+  //   description:
+  //     "Navigating patient consent in the era of large-scale bio-banking and DNA analytics.",
+  // },
+  // {
+  //   slug: "respiratory-panel-innovation",
+  //   image: blog4,
+  //   author: "Robert Vance",
+  //   date: "Apr 20, 2024",
+  //   readTime: "6 min read",
+  //   title: "Respiratory Panel Innovation: A New Era",
+  //   description:
+  //     "Why multi-pathogen testing is becoming the gold standard for seasonal respiratory surveillance.",
+  // },
 ];
 
 export default function BlogGrid() {
   return (
     <section className="bg-white pb-28">
       <div className="mx-auto max-w-[1180px] px-5">
-
         <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
-
-          {/* LEFT */}
-
+          
+          {/* LEFT BLOG GRID */}
           <div className="grid gap-8 md:grid-cols-2">
-
-            {blogs.map((blog, index) => (
+            {blogs.map((blog) => (
               <BlogCard
-                key={index}
+                key={blog.slug}
                 {...blog}
               />
             ))}
-
           </div>
 
           {/* RIGHT SIDEBAR */}
-
           <aside className="space-y-8">
-
             <TrendingSidebar />
 
-            <NewsletterCard />
+          
 
-            <ResourcesCard />
-
+           
           </aside>
-
         </div>
-
       </div>
     </section>
   );

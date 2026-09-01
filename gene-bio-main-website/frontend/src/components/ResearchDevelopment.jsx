@@ -3,9 +3,9 @@ import researchImage from "../assets/images/research-development.png";
 
 const ResearchDevelopment = () => {
   const points = [
-    "Proprietary Enzyme Engineering",
-    "AI-Pathogen Prediction Modeling",
-    "Sustainable Reagent Synthesis",
+    "Advanced Biological Analytics",
+    "Precision Genomic Insights",
+    "Data-Driven Research",
   ];
 
   return (
@@ -33,17 +33,15 @@ const ResearchDevelopment = () => {
 
           {/* Heading */}
           <h2 className="max-w-[550px] text-[34px] font-bold leading-[1.12] text-[#17191A] sm:text-[40px] md:text-[44px] lg:text-[48px]">
-            Where Biology Meets
+            Where Science Meets
             <br />
-            Data Science.
+            Innovation.
           </h2>
 
           {/* Description */}
           <p className="mt-6 max-w-[600px] text-[14px] font-normal leading-[1.7] text-[#4B5558] md:text-[15px]">
-            Our R&amp;D centers in Geneva and Bangalore are redefining the
-            boundaries of molecular diagnostics. By integrating AI-driven
-            pathogen prediction with microfluidic hardware, we're building a
-            future where disease detection happens at the speed of life.
+          At GeneBio Healthcare, we bring together biological sciences, advanced technology, and data-driven insights to create smarter solutions for modern healthcare.
+          From understanding complex biological data to enabling meaningful scientific discoveries, we turn knowledge into innovation that can shape the future of healthcare.
           </p>
 
           {/* Feature Points */}
@@ -67,12 +65,7 @@ const ResearchDevelopment = () => {
           </div>
 
           {/* Bottom Link */}
-          <a
-            href="#"
-            className="mt-7 inline-block text-[12px] font-medium uppercase tracking-[0.05em] text-[#13BFF0] underline underline-offset-4 transition-opacity hover:opacity-70"
-          >
-            Read Scientific White Papers
-          </a>
+       
 
         </div>
       </div>

@@ -23,7 +23,7 @@ export default function Events() {
 
       <EventStats />
 
-      <PastEventInsights />
+      {/* <PastEventInsights /> */}
 
       <ConnectExperts />
 

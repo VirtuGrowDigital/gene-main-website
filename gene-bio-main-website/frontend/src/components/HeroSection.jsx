@@ -43,26 +43,26 @@ const HeroSection = () => {
           {/* Label */}
           <div className="mb-5 inline-flex rounded-full border border-[#10c8e8]/30 bg-[#032a35]/60 px-4 py-2 backdrop-blur-md">
             <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#36d8f4]">
-              Next-Gen Diagnostics
+            Leading IVD Manufacturer & Diagnostic Solutions
             </span>
           </div>
 
           {/* Heading */}
           <h1 className="text-[42px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[46px] md:text-[50px] lg:text-[54px]">
-            Innovating Health
+          Precision Diagnostics 
+
             <br />
-            Solutions,
+            Engineered for 
             <br />
             <span className="text-[#20c9ee]">
-              Transforming
-              <br className="lg:hidden" /> Lives.
+            Global 
+              <br className="lg:hidden" /> Healthcare
             </span>
           </h1>
 
           {/* Description */}
           <p className="mt-6 max-w-[420px] text-[14px] leading-7 text-white/75 md:text-[15px] lg:max-w-[450px] lg:text-[14px] lg:leading-[1.8]">
-            Precision biotechnology meets clinical excellence. We engineer
-            the world's most reliable rapid diagnostic solutions.
+          Empowering clinical laboratories, hospitals, and healthcare systems with high-accuracy In-Vitro Diagnostic (IVD) kits, rapid screening tests, and biochemistry reagents manufactured in India.
           </p>
 
           {/* Buttons */}
@@ -71,7 +71,7 @@ const HeroSection = () => {
     href="#products"
     className="flex h-[54px] w-full items-center justify-center rounded-full bg-[#20c9ee] text-[14px] font-semibold text-[#00141d] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#10b9dc] lg:h-auto lg:w-auto lg:rounded-[8px] lg:px-7 lg:py-3 lg:text-[11px] lg:text-white"
   >
-    Explore Solutions
+    Explore Products
   </a>
 
   <a

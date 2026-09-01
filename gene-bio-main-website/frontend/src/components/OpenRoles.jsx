@@ -183,6 +183,10 @@ const [savedJobs, setSavedJobs] = useState([]);
       
               <p className="mt-4 text-gray-500">
                 Join GeneBio and shape the future of diagnostics.
+                <br>
+                
+                </br>
+                Mail your CV at hr@genebiohealthcare.com
               </p>
             </motion.div>
       

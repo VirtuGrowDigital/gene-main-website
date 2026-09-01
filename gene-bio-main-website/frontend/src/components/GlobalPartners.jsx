@@ -8,25 +8,15 @@ const GlobalPartners = () => {
         {/* Left */}
         <div>
           <h2 className="text-[26px] font-medium text-white sm:text-[30px]">
-            Partners in Global Health.
+            Global Health.
           </h2>
 
           <div className="mt-7 border-l-2 border-[#21CAFF] pl-5">
             <p className="max-w-[480px] text-[13px] italic leading-[1.8] text-white/75 sm:text-[14px]">
-              "GeneBio's rapid tests allowed us to scale our national
-              screening program in weeks, not months. The accuracy
-              results are unparalleled in the POCT market."
+              "Bringing health and happiness to the world, one insightful diagnosis at a time-from Bangalore to Berlin."
             </p>
 
-            <div className="mt-5">
-              <p className="text-[12px] font-semibold text-white">
-                Dr. Elena Rodriguez
-              </p>
-
-              <p className="mt-1 text-[10px] text-white/40">
-                Public Health Director, EMEA Region
-              </p>
-            </div>
+           
           </div>
 
           <p className="mt-10 max-w-[430px] text-[12px] italic leading-[1.7] text-white/30">

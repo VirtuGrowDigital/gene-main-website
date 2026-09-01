@@ -20,15 +20,13 @@ export default function CultureSection() {
             className="rounded-[30px] bg-white p-12 shadow-[0_30px_70px_rgba(0,0,0,.08)]"
           >
             <h2 className="text-[56px] font-bold leading-[1.05] text-[#202020]">
-              Our DNA is
+            Building the 
               <br />
-              Excellence
+              Future of Diagnostics
             </h2>
 
             <p className="mt-8 text-[18px] italic leading-9 text-[#555]">
-              “At GeneBio, we don't just hire for skills; we hire for the
-              relentless curiosity that drives medical breakthroughs. Our
-              culture is where clinical precision meets human empathy.”
+              “At GeneBio, our work directly impacts clinical decisions and patient outcomes every single day. We bring together scientific rigor, cleanroom precision, and a shared commitment to making advanced diagnostics accessible at a population scale.”
             </p>
 
             <div className="mt-12 flex items-center gap-5">

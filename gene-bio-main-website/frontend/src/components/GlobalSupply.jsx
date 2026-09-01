@@ -2,10 +2,10 @@ import worldMap from "../assets/images/world.svg";
 
 const countries = [
   "India",
-  "UAE",
-  "Saudi Arabia",
-  "Nepal",
-  "Bangladesh",
+  
+  "East Africa",
+  "Uganda",
+  
   "Kenya",
   "Nigeria",
   "South Africa",

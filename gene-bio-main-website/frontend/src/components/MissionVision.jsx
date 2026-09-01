@@ -89,10 +89,7 @@ export default function MissionVision() {
               variants={fadeUp}
               className="text-lg leading-8 text-[#666]"
             >
-              To develop and manufacture innovative, accurate and affordable
-              diagnostic solutions that enable healthcare professionals to make
-              confident clinical decisions while improving patient outcomes
-              across global healthcare systems.
+              To engineer robust, cost-effective, and highly sensitive diagnostic tools that enable early disease detection and improve patient outcomes across all tiers of healthcare.
             </motion.p>
           </motion.div>
 
@@ -129,10 +126,8 @@ export default function MissionVision() {
               variants={fadeUp}
               className="text-lg leading-8 text-[#666]"
             >
-              We envision a future where cutting-edge biotechnology, continuous
-              research and uncompromising quality standards empower every
-              laboratory and healthcare institution with reliable diagnostic
-              solutions.
+              To stand as a globally recognized IVD innovator, driving technological sovereignty in healthcare diagnostics through continuous translational research.
+              Integrity in Science: Every diagnostic claim is backed by rigorous empirical data, standardized lot verification, and strict regulatory adherence.
             </motion.p>
           </motion.div>
         </motion.div>

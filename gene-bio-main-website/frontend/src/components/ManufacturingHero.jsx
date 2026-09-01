@@ -35,18 +35,16 @@ export default function ManufacturingHero() {
 
           {/* Heading */}
           <h1 className="text-[38px] font-bold leading-[1.15] tracking-[-0.02em] text-white md:text-[48px] lg:text-[54px]">
-            The Future of
+          Advanced In-Vitro 
             <br />
             <span className="text-[#20C9EE]">
-              Diagnostic Manufacturing
+            Diagnostic Manufacturing
             </span>
           </h1>
 
           {/* Description */}
           <p className="mt-6 max-w-[450px] text-[13px] leading-[1.8] text-white/70 md:text-[14px]">
-            Precision-engineered diagnostics produced in world-class
-            facilities. We bridge the gap between complex biotechnology
-            and global healthcare accessibility.
+          Engineered in ISO 8 / Class 100,000 cleanrooms under strict CDSCO compliance. We manufacture high-sensitivity rapid test kits, ELISA panels, and molecular transport systems for hospitals, labs, and national health programs.
           </p>
 
           {/* Buttons */}
