@@ -16,12 +16,12 @@ export default function ProductCard({
       >
         {/* Image */}
   
-        <div className="flex h-[320px] items-center justify-center bg-[#DDF7FC] p-10">
+        <div className="flex h-[320px] items-center justify-center bg-[#DDF7FC] p-4">
   
           <img
             src={image}
             alt={title}
-            className="max-h-[220px] w-auto object-contain transition duration-300 hover:scale-105"
+            className="max-h-[320px] w-auto object-contain transition duration-300 hover:scale-105"
           />
   
         </div>

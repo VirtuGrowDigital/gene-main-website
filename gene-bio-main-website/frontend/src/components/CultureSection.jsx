@@ -58,7 +58,7 @@ export default function CultureSection() {
             whileHover={{ y: -8 }}
             className="group"
           >
-            <div className="overflow-hidden rounded-[26px] bg-gradient-to-br from-[#B8DAB8] to-[#7DB38D] p-8 shadow-xl">
+            <div className="overflow-hidden rounded-[26px] bg-gradient-to-br  p-3 shadow-xl">
 
               <img
                 src={meetingImage}

@@ -44,11 +44,7 @@ export default function GlobalInnovations() {
 
           </div>
 
-          <button className="flex items-center gap-2 text-sm font-medium text-[#20C9EE] transition hover:gap-3">
-            View More
-            <ArrowRight size={18} />
-          </button>
-
+       
         </div>
 
         {/* Cards */}

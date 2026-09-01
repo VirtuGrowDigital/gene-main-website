@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import mainImage from "../assets/images/manu.png";
+import mainImage from "../assets/images/manu1.png";
 
 export default function ManufacturingInfrastructure() {
   return (

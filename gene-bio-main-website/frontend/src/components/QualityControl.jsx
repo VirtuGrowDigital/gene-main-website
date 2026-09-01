@@ -1,6 +1,6 @@
-import qcMain from "../assets/images/research-development.png";
-import qc1 from "../assets/images/research-development.png";
-import qc2 from "../assets/images/research-development.png";
+import qcMain from "../assets/images/manu4.png";
+import qc1 from "../assets/images/Lab Testing.png";
+import qc2 from "../assets/images/manu3.png";
 
 export default function QualityControl() {
   return (

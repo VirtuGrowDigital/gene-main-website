@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
 
-import labImg from "../assets/images/lab.png";
-import officeImg from "../assets/images/office.png";
+import labImg from "../assets/images/office.jpg";
+import officeImg from "../assets/images/lab.jpg";
+import peopleImg from "../assets/images/diagnostic-lab.png";
 
 const galleryItems = [
   {
     title: "Collaborative Culture",
-    image: labImg,
+    image: officeImg,
   },
   {
     title: "Global Impact",
-    image: officeImg,
+    image: peopleImg,
   },
 ];
 
@@ -18,6 +19,7 @@ export default function CareerGallery() {
   return (
     <section className="bg-white py-24">
       <div className="mx-auto max-w-[1180px] px-5 md:px-6 lg:px-8">
+
         {/* Heading */}
 
         <motion.div
@@ -38,10 +40,12 @@ export default function CareerGallery() {
           </p>
         </motion.div>
 
+
         {/* Gallery */}
 
         <div className="mt-16 space-y-6">
-          {/* Large Image */}
+
+          {/* 1. Large Image */}
 
           <motion.div
             initial={{ opacity: 0, y: 35 }}
@@ -53,15 +57,26 @@ export default function CareerGallery() {
             <img
               src={labImg}
               alt="GeneBio Laboratory"
-              className="h-[430px] w-full object-cover transition duration-700 group-hover:scale-105"
+              className="
+                h-[430px]
+                w-full
+                object-cover
+                transition
+                duration-700
+                group-hover:scale-105
+              "
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           </motion.div>
 
+
           {/* Bottom Grid */}
 
           <div className="grid gap-6 md:grid-cols-2">
+
+            {/* 2 & 3 */}
+
             {galleryItems.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -77,7 +92,14 @@ export default function CareerGallery() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-[250px] w-full object-cover transition duration-700 group-hover:scale-105"
+                  className="
+                    h-[250px]
+                    w-full
+                    object-cover
+                    transition
+                    duration-700
+                    group-hover:scale-105
+                  "
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -89,8 +111,11 @@ export default function CareerGallery() {
                 </div>
               </motion.div>
             ))}
+
           </div>
+
         </div>
+
       </div>
     </section>
   );

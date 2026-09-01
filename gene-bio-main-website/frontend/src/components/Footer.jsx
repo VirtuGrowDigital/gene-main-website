@@ -47,6 +47,9 @@ export default function Footer() {
               <br/>
               sp@genebiohealthcare.com
               <br/>
+              <br/>
+              1800-8911-499
+              <br/>
               +91 9236392922
             </p>
 
