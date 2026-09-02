@@ -1,74 +1,80 @@
 import { CalendarDays, ArrowRight } from "lucide-react";
-import featuredImage from "../assets/images/blog1.png"; // use your featured image
+import { Link } from "react-router-dom";
+
+import featuredImage from "../assets/images/malaria2.jpeg";
 
 export default function FeaturedArticle() {
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-[1180px] px-5">
+    <section className="bg-white py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className="mx-auto w-full max-w-[1180px] px-5 sm:px-6 lg:px-8">
 
-        <div className="overflow-hidden rounded-[28px] bg-white shadow-[0_30px_70px_rgba(0,0,0,.12)]">
+        <div className="overflow-hidden rounded-[22px] bg-white shadow-[0_30px_70px_rgba(0,0,0,.12)] sm:rounded-[26px] lg:rounded-[28px]">
 
           <div className="grid lg:grid-cols-[58%_42%]">
 
             {/* LEFT IMAGE */}
-
-            <div className="relative h-[620px]">
+            <div className="relative h-[280px] sm:h-[380px] md:h-[480px] lg:h-[620px]">
 
               <img
                 src={featuredImage}
-                alt=""
+                alt="Malaria symptoms, prevention and testing"
                 className="h-full w-full object-cover"
               />
 
-              <div className="absolute left-6 top-6 rounded-full bg-[#29BDF4] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
-                Future of POCT
+              <div className="absolute left-5 top-5 rounded-full bg-[#29BDF4] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white sm:left-6 sm:top-6 sm:text-[11px] sm:tracking-[0.18em]">
+                Malaria Awareness
               </div>
 
             </div>
 
-            {/* RIGHT */}
+            {/* RIGHT CONTENT */}
+            <div className="flex flex-col justify-center px-6 py-10 sm:px-9 sm:py-12 md:px-12 md:py-14 lg:px-16 lg:py-14">
 
-            <div className="flex flex-col justify-center px-16 py-14">
-
-              <div className="flex items-center gap-4 text-[13px] text-[#777]">
+              {/* META */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[12px] text-[#777] sm:gap-4 sm:text-[13px]">
 
                 <CalendarDays size={15} />
 
-                <span>May 24, 2024</span>
+                <span>September 02, 2026</span>
 
                 <span>•</span>
 
-                <span>12 min read</span>
+                <span>10 min read</span>
 
               </div>
 
-              <h2 className="mt-8 text-[54px] font-bold leading-[1.05] tracking-[-0.03em] text-[#202020]">
-                The Next
+              {/* TITLE */}
+              <h2 className="mt-6 text-[34px] font-bold leading-[1.08] tracking-[-0.03em] text-[#202020] sm:mt-7 sm:text-[42px] md:text-[48px] lg:mt-8 lg:text-[54px] lg:leading-[1.05]">
+
+                Malaria
                 <br />
-                Decade of
+                Symptoms,
                 <br />
-                Rapid Point-
+                Causes &
                 <br />
-                of-Care
-                <br />
-                Molecular
-                <br />
-                Testing
+                Prevention
+
               </h2>
 
-              <p className="mt-8 text-[17px] leading-9 text-[#666]">
-                As decentralization continues to reshape diagnostic
-                landscapes, we analyze the architectural shift toward
-                molecular intelligence in community clinics.
+              {/* DESCRIPTION */}
+              <p className="mt-6 text-[16px] leading-7 text-[#666] sm:mt-7 sm:text-[17px] sm:leading-9 lg:mt-8">
+
+                Malaria is a preventable and curable disease, but delayed
+                diagnosis and treatment can lead to serious complications.
+                Learn about common symptoms, warning signs, prevention and
+                the importance of timely malaria testing.
+
               </p>
 
-              <button className="mt-10 flex w-fit items-center gap-2 font-semibold text-[#29BDF4] transition hover:gap-3">
-
+              {/* CTA */}
+              <Link
+                to="/resources/blogs/malaria-symptoms-causes-prevention-testing"
+                className="mt-8 flex w-fit items-center gap-2 font-semibold text-[#29BDF4] transition-all hover:gap-3 sm:mt-10"
+              >
                 Read Full Article
 
                 <ArrowRight size={18} />
-
-              </button>
+              </Link>
 
             </div>
 
