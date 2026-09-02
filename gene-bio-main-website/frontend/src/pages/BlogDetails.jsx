@@ -9,7 +9,7 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-import blog1 from "../assets/images/blog1.png";
+import blog1 from "../assets/images/malaria.jpeg";
 import blog2 from "../assets/images/blog2.png";
 import blog3 from "../assets/images/blog3.png";
 import blog4 from "../assets/images/blog4.png";
@@ -680,7 +680,7 @@ export default function BlogDetails() {
               </p>
 
               <Link
-                to="/blogs"
+                to="/resources/blogs"
                 className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#E9A117] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#D89100]"
               >
                 Explore More Articles

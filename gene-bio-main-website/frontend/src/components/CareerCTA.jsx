@@ -86,23 +86,15 @@ export default function CareerCTA() {
               viewport={{ once: true }}
               className="mt-12 flex flex-col justify-center gap-4 sm:flex-row"
             >
-              <button className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#28BDF4] px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#18A7DB]">
-                Submit Application
+            
+            <a
+  href="/careers#open-roles"
+  className="group inline-flex items-center justify-center gap-2 rounded-full border bg-[#28BDF4] px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#18A7DB]"
+>
+  <BriefcaseBusiness size={18} />
 
-                <ArrowRight
-                  size={18}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </button>
-
-              <a
-                href="/careers"
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#28BDF4] hover:bg-white/10"
-              >
-                <BriefcaseBusiness size={18} />
-
-                View Open Roles
-              </a>
+  View Open Roles
+</a>
             </motion.div>
           </div>
         </motion.div>

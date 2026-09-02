@@ -1,8 +1,43 @@
 import { BarChart3 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import heroBg from "../assets/images/bulk-hero.png";
+import catalog from "../assets/images/GeneBio Healthcare Products_20240930_134047_0000.pdf";
 
 export default function BulkPricingHero() {
+  const navigate = useNavigate();
+
+  const handleInquiryClick = () => {
+    // If already on the Bulk Pricing page
+    if (window.location.pathname === "/partners/bulk-pricing") {
+      const element = document.getElementById("bulk-inquiry");
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      return;
+    }
+
+    // Navigate to Bulk Pricing page first
+    navigate("/partners/bulk-pricing");
+
+    // Wait for the page to render, then scroll
+    setTimeout(() => {
+      const element = document.getElementById("bulk-inquiry");
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 300);
+  };
+
   return (
     <section className="relative overflow-hidden bg-[#F9FBFC]">
 
@@ -27,13 +62,12 @@ export default function BulkPricingHero() {
         </div>
 
         {/* Hero Content */}
-
-        <div className="mx-auto grid min-h-[640px] max-w-[1180px] items-center gap-12 px-5 pt-20 sm:pt-24 lg:pt-0 lg:grid-cols-2">
+        <div className="mx-auto grid min-h-[640px] max-w-[1180px] items-center gap-12 px-5 pt-20 sm:pt-24 lg:grid-cols-2 lg:pt-0">
 
           {/* LEFT */}
-
           <div>
 
+            {/* Badge */}
             <div className="inline-flex items-center rounded-full bg-[#EAF8FF] px-4 py-2">
 
               <span className="mr-2 h-2 w-2 rounded-full bg-[#27BDF3]" />
@@ -44,40 +78,54 @@ export default function BulkPricingHero() {
 
             </div>
 
+            {/* Heading */}
             <h1 className="mt-8 text-[42px] font-bold leading-[1.08] tracking-[-0.03em] text-[#202020] md:text-[56px]">
               Get Competitive
               <br />
+
               <span className="text-[#29BDF4]">
                 Bulk Pricing
               </span>
             </h1>
 
+            {/* Description */}
             <p className="mt-8 max-w-[480px] text-[16px] leading-8 text-[#555]">
               Empower your healthcare network with precision-engineered
               diagnostics and laboratory solutions at manufacturer-direct
               rates.
             </p>
 
+            {/* BUTTONS */}
             <div className="mt-10 flex gap-5">
 
-              <button className="rounded-xl bg-[#29BDF4] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_15px_35px_rgba(41,189,244,.35)] transition hover:bg-[#17AFE6]">
+              {/* Inquire Now */}
+              <button
+                type="button"
+                onClick={handleInquiryClick}
+                className="rounded-xl bg-[#29BDF4] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_15px_35px_rgba(41,189,244,.35)] transition hover:bg-[#17AFE6]"
+              >
                 Inquire Now
               </button>
 
-              <button className="rounded-xl border border-[#BEEBFD] bg-white px-8 py-4 text-[15px] font-semibold text-[#29BDF4] transition hover:bg-[#F5FCFF]">
+              {/* Download Catalogue */}
+              <a
+                href={catalog}
+                download="GeneBio-Healthcare-Catalogue.pdf"
+                className="rounded-xl border border-[#BEEBFD] bg-white px-8 py-4 text-[15px] font-semibold text-[#29BDF4] transition hover:bg-[#F5FCFF]"
+              >
                 View Catalog
-              </button>
+              </a>
 
             </div>
 
           </div>
 
           {/* RIGHT */}
-
           <div className="flex justify-end">
 
             <div className="w-[360px] rounded-[28px] bg-white p-8 shadow-[0_35px_80px_rgba(0,0,0,0.14)]">
 
+              {/* Capacity Header */}
               <div className="flex justify-between">
 
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#EAF8FF]">
@@ -107,6 +155,7 @@ export default function BulkPricingHero() {
 
               </div>
 
+              {/* Efficiency */}
               <div className="mt-10">
 
                 <div className="h-[7px] overflow-hidden rounded-full bg-[#E5EEF3]">

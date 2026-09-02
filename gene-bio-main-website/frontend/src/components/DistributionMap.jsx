@@ -14,14 +14,7 @@ export default function DistributionMap() {
           transit to any destination worldwide.
         </p>
 
-        <div className="mt-14 flex h-[340px] items-center justify-center rounded-[28px] bg-[#F5F7F9]">
-
-          <Map
-            size={44}
-            className="text-[#2CBDF5]"
-          />
-
-        </div>
+     
 
       </div>
     </section>

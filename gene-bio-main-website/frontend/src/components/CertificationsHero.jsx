@@ -50,14 +50,14 @@ export default function CertificationsHero() {
           </p>
 
           {/* CTA */}
-          <div className="mt-7">
+          {/* <div className="mt-7">
             <Link
               to="/company/certifications"
               className="inline-flex items-center justify-center rounded-[7px] bg-[#20C9EE] px-7 py-3 text-[11px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#10B9DC]"
             >
               Verify Authenticity
             </Link>
-          </div>
+          </div> */}
 
         </div>
       </div>

@@ -30,14 +30,20 @@ export default function ManufacturingCTA() {
           innovation and a dependable global supply chain.
         </p>
 
+        {/* Buttons */}
+
         <div className="mt-14 flex flex-wrap justify-center gap-5">
 
+          {/* Become a Distributor */}
+
           <Link
-            to="/contact"
+            to="/partners/distributor"
             className="rounded-full bg-white px-8 py-4 font-semibold text-[#18B7F2] transition hover:scale-105"
           >
             Request Manufacturing Details
           </Link>
+
+          {/* Products */}
 
           <Link
             to="/products"
@@ -54,22 +60,30 @@ export default function ManufacturingCTA() {
 
           <div>
             <h3 className="text-5xl font-bold text-white">120+</h3>
-            <p className="mt-3 text-white/80">Countries Served</p>
+            <p className="mt-3 text-white/80">
+              Countries Served
+            </p>
           </div>
 
           <div>
             <h3 className="text-5xl font-bold text-white">25K+</h3>
-            <p className="mt-3 text-white/80">Orders Delivered</p>
+            <p className="mt-3 text-white/80">
+              Orders Delivered
+            </p>
           </div>
 
           <div>
             <h3 className="text-5xl font-bold text-white">99.9%</h3>
-            <p className="mt-3 text-white/80">Quality Assurance</p>
+            <p className="mt-3 text-white/80">
+              Quality Assurance
+            </p>
           </div>
 
           <div>
             <h3 className="text-5xl font-bold text-white">24×7</h3>
-            <p className="mt-3 text-white/80">Technical Support</p>
+            <p className="mt-3 text-white/80">
+              Technical Support
+            </p>
           </div>
 
         </div>

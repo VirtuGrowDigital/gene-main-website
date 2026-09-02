@@ -67,7 +67,10 @@ export default function BulkInquirySection() {
   };
 
   return (
-    <section className="bg-white py-28">
+    <section
+      id="bulk-inquiry"
+      className="scroll-mt-24 bg-white py-28"
+    >
       <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-start gap-20 px-5 lg:grid-cols-[360px_1fr]">
 
         {/* LEFT */}
@@ -88,7 +91,10 @@ export default function BulkInquirySection() {
           <div className="mt-14 space-y-5">
             {features.map((item) => (
               <div key={item} className="flex items-center gap-4">
-                <CheckCircle2 size={20} className="text-[#2CBDF5]" />
+                <CheckCircle2
+                  size={20}
+                  className="text-[#2CBDF5]"
+                />
 
                 <span className="text-[17px] text-[#333]">
                   {item}
@@ -211,7 +217,7 @@ export default function BulkInquirySection() {
                 />
               </div>
 
-              {/* Status Message */}
+              {/* Status */}
 
               {status && (
                 <p

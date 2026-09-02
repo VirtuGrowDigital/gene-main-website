@@ -60,7 +60,7 @@ export default function DistributorHero() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-10 flex flex-wrap justify-center gap-5">
+          {/* <div className="mt-10 flex flex-wrap justify-center gap-5">
 
             <button className="rounded-xl bg-[#28C2F6] px-8 py-4 text-[16px] font-semibold text-white transition hover:bg-[#13AFE6]">
               Apply Now
@@ -70,7 +70,7 @@ export default function DistributorHero() {
               Contact Team
             </button>
 
-          </div>
+          </div> */}
 
           {/* Stats */}
           <div className="mt-20 grid w-full max-w-[980px] grid-cols-2 gap-8 border-t border-white/15 pt-10 md:grid-cols-4">

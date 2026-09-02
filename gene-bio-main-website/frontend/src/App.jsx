@@ -68,7 +68,7 @@ function App() {
         element={<Blogs />}
       />
 
-      {/* Blog Details - Dynamic Route */}
+      {/* Blog Details */}
       <Route
         path="/resources/blogs/:slug"
         element={<BlogDetails />}

@@ -106,23 +106,7 @@ export default function AboutHero() {
 
           {/* Button */}
 
-          <motion.div variants={fadeUp} className="mt-7">
-            <motion.button
-              whileHover={{
-                y: -3,
-                scale: 1.03,
-              }}
-              whileTap={{
-                scale: 0.97,
-              }}
-              transition={{
-                duration: 0.25,
-              }}
-              className="inline-flex items-center justify-center rounded-[7px] bg-[#20C9EE] px-7 py-3 text-[11px] font-semibold text-white transition-all duration-300 hover:bg-[#10B9DC]"
-            >
-              Explore Our Labs
-            </motion.button>
-          </motion.div>
+          
         </motion.div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import catalog from "../assets/images/GeneBio Healthcare Products_20240930_134047_0000.pdf";
 export default function BulkCTA() {
   return (
     <section className="bg-white py-16 lg:py-24">
@@ -14,13 +15,22 @@ export default function BulkCTA() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-5 lg:mt-14">
-            <button className="w-full rounded-xl bg-white px-8 py-4 text-[15px] font-semibold text-[#2CBDF5] transition hover:bg-[#F5FCFF] sm:w-auto lg:px-9">
-              Contact Our Enterprise Team
-            </button>
+          <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=sp@genebiohealthcare.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex w-full items-center justify-center rounded-xl bg-white px-8 py-4 text-[15px] font-semibold text-[#2CBDF5] transition hover:bg-[#F5FCFF] sm:w-auto lg:px-9"
+>
+  Contact Our Enterprise Team
+</a>
 
-            <button className="w-full rounded-xl border border-white/40 px-8 py-4 text-[15px] font-semibold text-white transition hover:bg-white hover:text-[#2CBDF5] sm:w-auto lg:px-9">
-              Download Media Kit
-            </button>
+<a
+  href={catalog}
+  download="GeneBio-Healthcare-Catalogue.pdf"
+  className="inline-flex w-full items-center justify-center rounded-xl border border-white/40 px-8 py-4 text-[15px] font-semibold text-white transition hover:bg-white hover:text-[#2CBDF5] sm:w-auto lg:px-9"
+>
+  Download Catalogue
+</a>
           </div>
         </div>
       </div>

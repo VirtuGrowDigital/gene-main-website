@@ -111,7 +111,7 @@ export default function EventRoadmap() {
             >
               Event Roadmap{" "}
               <span className="text-[#28BDF4]">
-                2024–25
+                2026-27
               </span>
             </motion.h2>
 

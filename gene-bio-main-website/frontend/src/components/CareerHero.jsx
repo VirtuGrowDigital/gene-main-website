@@ -6,8 +6,20 @@ import heroImage from "../assets/images/hero-bg.png";
 import heroImageMobile from "../assets/images/home-bg-mobile.png";
 
 export default function CareerHero() {
+  const handleOpeningsClick = () => {
+    const element = document.getElementById("open-roles");
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#02131D]">
+
       {/* Desktop Background */}
 
       <img
@@ -39,17 +51,20 @@ export default function CareerHero() {
       {/* Hero */}
 
       <div className="relative mx-auto flex min-h-screen max-w-[1180px] items-center px-5 pt-24 md:px-6 md:pt-28 lg:px-8 lg:pt-0">
+
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="max-w-[560px]"
         >
+
           {/* Heading */}
 
           <h1 className="text-[38px] font-bold leading-[1.1] tracking-[-0.02em] text-white md:text-[48px] lg:text-[54px]">
             Build The
             <br />
+
             <span className="text-[#28BDF4]">
               Future Of Diagnostics
             </span>
@@ -65,22 +80,32 @@ export default function CareerHero() {
           {/* Buttons */}
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap lg:mt-10">
-            <Link
-              to="#roles"
+
+            {/* View Openings */}
+
+            <button
+              type="button"
+              onClick={handleOpeningsClick}
               className="rounded-lg bg-[#28BDF4] px-8 py-3 text-center text-[12px] font-semibold uppercase tracking-[0.14em] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#12ACE7]"
             >
               View Openings
-            </Link>
+            </button>
+
+            {/* Our Mission */}
 
             <Link
-              to="/about"
+              to="/company/about"
               className="rounded-lg bg-white px-8 py-3 text-center text-[12px] font-semibold uppercase tracking-[0.14em] text-[#202020] transition duration-300 hover:-translate-y-1"
             >
               Our Mission
             </Link>
+
           </div>
+
         </motion.div>
+
       </div>
+
     </section>
   );
 }

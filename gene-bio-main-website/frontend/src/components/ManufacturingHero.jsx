@@ -56,12 +56,6 @@ export default function ManufacturingHero() {
               Explore Products
             </Link>
 
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-[7px] border border-[#20C9EE] bg-transparent px-7 py-3 text-[11px] font-semibold text-white transition-all duration-300 hover:bg-[#20C9EE]"
-            >
-              Compliance Reports
-            </Link>
           </div>
 
         </div>

@@ -24,10 +24,12 @@ import p13 from "../assets/images/p13.png";
 import p14 from "../assets/images/p14.png";
 import p15 from "../assets/images/p15.png";
 import p16 from "../assets/images/p16.png";
+import elisaHbsag2 from "../assets/images/elisaHbsag2.jpg";
 
 import elisaHbsag from "../assets/images/HBsAg.jpeg";
 import elisaHcv from "../assets/images/HCV.jpeg";
-import elisaDengue from "../assets/images/Dengue.jpeg";
+
+import dengue from "../assets/images/denguens1.jpg";
 
 import ManufacturingSection from "../components/ManufacturingSection";
 
@@ -74,7 +76,7 @@ export default function Products() {
       class: "Class D",
       description:
         "Rapid test for qualitative detection of Hepatitis B Surface Antigen.",
-      image: p4,
+      image: elisaHbsag,
     },
 
     {
@@ -206,7 +208,7 @@ export default function Products() {
       title: "HBsAg",
       description:
         "ELISA kit for qualitative detection of Hepatitis B Surface Antigen.",
-      image: elisaHbsag,
+      image: elisaHbsag2,
     },
 
     {
@@ -222,7 +224,7 @@ export default function Products() {
       title: "Dengue NS1",
       description:
         "ELISA kit for detection of Dengue NS1 antigen.",
-      image: elisaDengue,
+      image: dengue,
     },
   ];
 

@@ -32,7 +32,7 @@ export default function GalleryCTA() {
           <div className="mt-12 flex flex-wrap justify-center gap-5">
 
             <Link
-              to="/contact"
+              to="/partners/bulk-pricing"
               className="inline-flex items-center gap-2 rounded-full bg-[#21BDF4] px-8 py-4 text-[14px] font-semibold text-[#032A35] transition hover:scale-105"
             >
               Contact Us

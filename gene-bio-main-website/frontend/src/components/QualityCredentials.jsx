@@ -6,7 +6,7 @@ import {
   ClipboardCheck,
   ArrowUpRight,
 } from "lucide-react";
-
+import { Link } from "react-router-dom";
 import iso13485 from "../assets/images/ISO - 13485_New.pdf";
 import iso9001 from "../assets/images/ISO - 9001.pdf";
 import ceCertificate from "../assets/images/CE & WHO-GMPCertificate-1.pdf";
@@ -131,13 +131,13 @@ export default function QualityCredentials() {
               validation protocols.
             </p>
 
-            <a
-              href="/contact"
-              className="mt-10 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#20C9EE]"
-            >
-              Contact Compliance Office
-              <ArrowUpRight size={14} />
-            </a>
+            <Link
+  to="/partners/bulk-pricing"
+  className="mt-10 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#20C9EE]"
+>
+  Contact Compliance Office
+  <ArrowUpRight size={14} />
+</Link>
           </div>
         </div>
       </div>

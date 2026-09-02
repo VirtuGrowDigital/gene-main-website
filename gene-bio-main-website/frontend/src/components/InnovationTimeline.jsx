@@ -62,7 +62,7 @@ const rightCard = {
 export default function InnovationTimeline() {
   const milestones = [
     {
-      year: "2018",
+      year: "2020",
       title: "Company Founded",
       description:
         "GeneBio Healthcare was established with the vision of delivering innovative and reliable diagnostic solutions.",
@@ -74,7 +74,7 @@ export default function InnovationTimeline() {
         "Expanded production capabilities with advanced manufacturing infrastructure and quality assurance systems.",
     },
     {
-      year: "2022",
+      year: "2021",
       title: "Global Presence",
       description:
         "Successfully expanded our distribution network across multiple international markets.",
