@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import banner from "../assets/images/exebition.jpeg";
+import banner from "../assets/images/exebition.jpg";
 
 export default function FeaturedEvent() {
   // Medical Fair India 2026

@@ -46,9 +46,24 @@ const navItems = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+
   const navRef = useRef(null);
 
+  // Sticky navbar scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolling(window.scrollY > 20);
+    };
 
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Close menus when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -56,25 +71,35 @@ export default function Navbar() {
         setOpenDropdown(null);
       }
     }
-  
+
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("touchstart", handleClickOutside);
-  
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchstart", handleClickOutside);
     };
   }, []);
+
   return (
-    <header className="absolute left-0 top-0 z-50 w-full px-5 pt-6 md:px-10 lg:px-16">
+    <header
+      className={`fixed left-0 top-0 z-50 w-full px-5 transition-all duration-300 md:px-10 lg:px-16 ${
+        isScrolling ? "pt-3" : "pt-6"
+      }`}
+    >
       <nav
-      ref={navRef}
-        className="
+        ref={navRef}
+        className={`
           relative mx-auto flex max-w-[1180px] items-center justify-between
-          rounded-[32px] bg-white px-5 py-3
-          shadow-[0_0_10px_2px_rgba(0,200,255,0.9),0_0_28px_8px_rgba(0,200,255,0.45)]
+          rounded-[32px] px-5 py-3
+          transition-all duration-300
           md:px-8 lg:px-10
-        "
+          ${
+            isScrolling
+              ? "bg-white/85 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-xl"
+              : "bg-white shadow-[0_0_10px_2px_rgba(0,200,255,0.9),0_0_28px_8px_rgba(0,200,255,0.45)]"
+          }
+        `}
       >
         {/* Logo */}
         <Link to="/" className="flex shrink-0 items-center">
@@ -96,22 +121,16 @@ export default function Navbar() {
                 </button>
 
                 <div
-  className="
-    invisible absolute left-0 top-full mt-4 w-64
-    rounded-2xl
-    border border-white/20
-    bg-white/75
-    backdrop-blur-xl
-    p-3
-    opacity-0
-    shadow-[0_12px_40px_rgba(0,0,0,0.15)]
-    transition-all duration-300
-    group-hover:visible
-    group-hover:translate-y-0
-    group-hover:opacity-100
-    translate-y-2
-  "
->
+                  className="
+                    invisible absolute left-0 top-full mt-4 w-64
+                    translate-y-2 rounded-2xl border border-white/20
+                    bg-white/75 p-3 opacity-0 backdrop-blur-xl
+                    shadow-[0_12px_40px_rgba(0,0,0,0.15)]
+                    transition-all duration-300
+                    group-hover:visible group-hover:translate-y-0
+                    group-hover:opacity-100
+                  "
+                >
                   {item.children.map((child) => (
                     <NavLink
                       key={child.to}
@@ -148,14 +167,14 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* CTA */}
+        {/* Desktop CTA */}
         <Link
           to="/partners/bulk-pricing"
           className="
-            hidden lg:inline-flex items-center justify-center
-            rounded-[14px] bg-[#068D9C]
-            px-6 py-3 text-[14px] font-bold text-white
+            hidden items-center justify-center rounded-[14px]
+            bg-[#068D9C] px-6 py-3 text-[14px] font-bold text-white
             transition-all hover:-translate-y-0.5 hover:bg-[#057887]
+            lg:inline-flex
           "
         >
           Get Bulk Pricing
@@ -164,7 +183,8 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-full  text-black lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full text-black lg:hidden"
+          aria-label="Toggle navigation menu"
         >
           {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -176,48 +196,48 @@ export default function Navbar() {
               {navItems.map((item) =>
                 item.children ? (
                   <div key={item.name} className="rounded-xl">
-  <button
-    onClick={() =>
-      setOpenDropdown(
-        openDropdown === item.name ? null : item.name
-      )
-    }
-    className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold text-[#068D9C] hover:bg-[#EEF9FD]"
-  >
-    {item.name}
+                    <button
+                      onClick={() =>
+                        setOpenDropdown(
+                          openDropdown === item.name ? null : item.name
+                        )
+                      }
+                      className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-bold text-[#068D9C] hover:bg-[#EEF9FD]"
+                    >
+                      {item.name}
 
-    <ChevronDown
-      size={18}
-      className={`transition-transform duration-300 ${
-        openDropdown === item.name ? "rotate-180" : ""
-      }`}
-    />
-  </button>
+                      <ChevronDown
+                        size={18}
+                        className={`transition-transform duration-300 ${
+                          openDropdown === item.name ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
 
-  {openDropdown === item.name && (
-    <div className="ml-3 mt-1 flex flex-col gap-1">
-      {item.children.map((child) => (
-        <NavLink
-          key={child.to}
-          to={child.to}
-          onClick={() => {
-            setIsOpen(false);
-            setOpenDropdown(null);
-          }}
-          className={({ isActive }) =>
-            `block rounded-xl px-4 py-3 text-sm ${
-              isActive
-                ? "bg-[#EEF9FD] font-semibold text-[#04C7E8]"
-                : "text-[#068D9C] hover:bg-[#EEF9FD]"
-            }`
-          }
-        >
-          {child.name}
-        </NavLink>
-      ))}
-    </div>
-  )}
-</div>
+                    {openDropdown === item.name && (
+                      <div className="ml-3 mt-1 flex flex-col gap-1">
+                        {item.children.map((child) => (
+                          <NavLink
+                            key={child.to}
+                            to={child.to}
+                            onClick={() => {
+                              setIsOpen(false);
+                              setOpenDropdown(null);
+                            }}
+                            className={({ isActive }) =>
+                              `block rounded-xl px-4 py-3 text-sm ${
+                                isActive
+                                  ? "bg-[#EEF9FD] font-semibold text-[#04C7E8]"
+                                  : "text-[#068D9C] hover:bg-[#EEF9FD]"
+                              }`
+                            }
+                          >
+                            {child.name}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   <NavLink
                     key={item.name}
@@ -237,6 +257,7 @@ export default function Navbar() {
                 )
               )}
 
+              {/* Mobile CTA */}
               <Link
                 to="/partners/bulk-pricing"
                 onClick={() => setIsOpen(false)}
