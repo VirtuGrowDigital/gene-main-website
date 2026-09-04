@@ -30,7 +30,7 @@ export default function CareerGallery() {
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="text-[38px] font-bold leading-tight text-[#1D1D1D] md:text-[50px]">
-            Life at GeneBio
+            Life at GeneBio Healthcare
           </h2>
 
           <p className="mt-5 text-[17px] leading-8 text-[#667085]">
