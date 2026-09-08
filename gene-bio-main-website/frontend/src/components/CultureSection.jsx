@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 
 import officeImage from "../assets/images/culture-office.png";
-import meetingImage from "../assets/images/culture-meeting.png";
+import meetingImage from "../assets/images/culture-meeting.jpg";
 
 export default function CultureSection() {
   return (
@@ -107,7 +107,7 @@ export default function CultureSection() {
                     md:text-[18px]
                   "
                 >
-                  Dr. Arun Kumar Srivastava
+                  Arun Kumar Srivastava
                 </h4>
 
                 <p

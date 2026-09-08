@@ -1,4 +1,4 @@
-import manufacturing from "../assets/images/manu.png";
+import manufacturing from "../assets/images/regional-infrastructure.png";
 import countriesIcon from "../assets/icons/countries.png";
 import certificationIcon from "../assets/icons/certification.png";
 
