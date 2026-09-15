@@ -18,8 +18,8 @@ import client7 from "../assets/images/clients/cl7.png";
 import client8 from "../assets/images/clients/cl8.png";
 import client9 from "../assets/images/clients/cl9.png";
 
-import client10 from "../assets/images/clients/cl8.png";
-import client11 from "../assets/images/clients/cl9.png";
+import client10 from "../assets/images/clients/cl20.png";
+import client11 from "../assets/images/clients/cl21.png";
 import client12 from "../assets/images/clients/cl10.png";
 
 import client13 from "../assets/images/clients/cl11.png";
