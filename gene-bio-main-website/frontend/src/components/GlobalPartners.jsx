@@ -6,32 +6,32 @@ import {
   Play,
 } from "lucide-react";
 
-import client1 from "../assets/images/PHOTO-2026-09-10-12-53-21 2.jpg";
-import client2 from "../assets/images/PHOTO-2026-09-10-12-53-21 3.jpg";
-import client3 from "../assets/images/PHOTO-2026-09-10-12-53-21.jpg";
+import client1 from "../assets/images/clients/cl1.png";
+import client2 from "../assets/images/clients/cl2.png";
+import client3 from "../assets/images/clients/cl3.png";
 
-import client4 from "../assets/images/PHOTO-2026-09-10-12-53-37 2.jpg";
-import client5 from "../assets/images/PHOTO-2026-09-10-12-53-37 3.jpg";
-import client6 from "../assets/images/PHOTO-2026-09-10-12-53-37.jpg";
+import client4 from "../assets/images/clients/cl4.png";
+import client5 from "../assets/images/clients/cl5.png";
+import client6 from "../assets/images/clients/cl6.png";
 
-import client7 from "../assets/images/PHOTO-2026-09-10-12-53-38 2.jpg";
-import client8 from "../assets/images/PHOTO-2026-09-10-12-53-38 3.jpg";
-import client9 from "../assets/images/PHOTO-2026-09-10-12-53-38.jpg";
+import client7 from "../assets/images/clients/cl7.png";
+import client8 from "../assets/images/clients/cl8.png";
+import client9 from "../assets/images/clients/cl9.png";
 
-import client10 from "../assets/images/PHOTO-2026-09-10-12-53-39 2.jpg";
-import client11 from "../assets/images/PHOTO-2026-09-10-12-53-39 3.jpg";
-import client12 from "../assets/images/PHOTO-2026-09-10-12-53-39.jpg";
+import client10 from "../assets/images/clients/cl8.png";
+import client11 from "../assets/images/clients/cl9.png";
+import client12 from "../assets/images/clients/cl10.png";
 
-import client13 from "../assets/images/PHOTO-2026-09-10-12-53-40 2.jpg";
-import client14 from "../assets/images/PHOTO-2026-09-10-12-53-40 3.jpg";
-import client15 from "../assets/images/PHOTO-2026-09-10-12-53-40.jpg";
+import client13 from "../assets/images/clients/cl11.png";
+import client14 from "../assets/images/clients/cl12.png";
+import client15 from "../assets/images/clients/cl13.png";
 
-import client16 from "../assets/images/PHOTO-2026-09-10-12-53-41 2.jpg";
-import client17 from "../assets/images/PHOTO-2026-09-10-12-53-41 3.jpg";
-import client18 from "../assets/images/PHOTO-2026-09-10-12-53-41.jpg";
+import client16 from "../assets/images/clients/cl14.png";
+import client17 from "../assets/images/clients/cl15.png";
+import client18 from "../assets/images/clients/cl16.png";
 
-import client19 from "../assets/images/PHOTO-2026-09-10-12-53-42 2.jpg";
-import client20 from "../assets/images/PHOTO-2026-09-10-12-53-42 3.jpg";
+import client19 from "../assets/images/clients/cl18.png";
+import client20 from "../assets/images/clients/cl19.png";
 
 const clients = [
   client1,
