@@ -7,6 +7,7 @@ import EventStats from "../components/EventStats";
 import PastEventInsights from "../components/PastEventInsights";
 import ConnectExperts from "../components/ConnectExperts";
 import Footer from "../components/Footer";
+import AwardsCollage from "../components/AwardsCollage";
 
 export default function Events() {
   return (
@@ -16,6 +17,7 @@ export default function Events() {
       <EventCategories />
 
       <EventRoadmap />
+      <AwardsCollage/>
 
       <FeaturedEvent />
 
