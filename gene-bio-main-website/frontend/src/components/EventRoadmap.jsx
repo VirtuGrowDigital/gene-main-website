@@ -352,8 +352,6 @@ export default function EventRoadmap() {
   // It needs 90 degree clockwise rotation.
   // =========================================================
 
-  const isRotatedMumbaiImage =
-    selectedEvent?.id === 1 && selectedImage === 3;
 
   // =========================================================
   // RENDER
@@ -680,11 +678,7 @@ export default function EventRoadmap() {
                 alt={`${selectedEvent.title} gallery photo ${
                   selectedImage + 1
                 }`}
-                className={`max-h-[88vh] max-w-[85vw] rounded-lg object-contain ${
-                  isRotatedMumbaiImage
-                    ? "rotate-90"
-                    : ""
-                }`}
+                className={`max-h-[88vh] max-w-[85vw] rounded-lg object-contain `}
               />
             </div>
 
