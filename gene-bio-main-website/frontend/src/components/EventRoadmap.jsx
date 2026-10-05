@@ -44,6 +44,9 @@ import mumbai from "../assets/images/mumbai.jpeg";
 import mumbai2 from "../assets/images/mumbai2.jpeg";
 import mumbai3 from "../assets/images/mumbai3.jpeg";
 import mumbai4 from "../assets/images/mumbai4.jpeg";
+import mumbai5 from "../assets/images/mumbai5.jpeg";
+import mumbai6 from "../assets/images/mumbai6.jpeg";
+import mumbai7 from "../assets/images/mumbai7.jpeg";
 
 // =========================================================
 // INDIAN FOOD EXPO IMAGES
@@ -136,6 +139,9 @@ const eventGalleries = {
     mumbai2,
     mumbai3,
     mumbai4,
+    mumbai5,
+    mumbai6,
+    mumbai7
   ],
 
   // =========================================================
