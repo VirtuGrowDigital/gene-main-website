@@ -41,6 +41,7 @@ import foundation9 from "../assets/images/foundation9.jpeg";
 // =========================================================
 
 import mumbai from "../assets/images/mumbai.jpeg";
+import mumbai1 from "../assets/images/mumbai1.jpeg";
 import mumbai2 from "../assets/images/mumbai2.jpeg";
 import mumbai3 from "../assets/images/mumbai3.jpeg";
 import mumbai4 from "../assets/images/mumbai4.jpeg";
@@ -136,6 +137,7 @@ const eventGalleries = {
 
   1: [
     mumbai,
+    mumbai1,
     mumbai2,
     mumbai3,
     mumbai4,
