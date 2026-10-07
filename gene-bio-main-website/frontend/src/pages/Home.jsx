@@ -1,3 +1,4 @@
+import AwardsCollage from "../components/AwardsCollage";
 import ContactSection from "../components/ContactSection";
 import DistributorCTA from "../components/DistributorCTA";
 import Footer from "../components/Footer";
@@ -21,8 +22,10 @@ const Home = () => {
       {/* <InnovationSpotlight/> */}
       <ManufacturingExcellence/>
       <ResearchDevelopment/>
+       <AwardsCollage/>
       <GlobalDiagnostics/>
       <TrustCompliance/>
+     
       <GlobalPartners/>
       <DistributorCTA/>
       <ContactSection/>

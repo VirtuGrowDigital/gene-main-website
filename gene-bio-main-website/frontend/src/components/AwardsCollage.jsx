@@ -6,10 +6,12 @@ import {
   ChevronRight,
   X,
   Award,
+  MapPin,
+  CalendarDays,
 } from "lucide-react";
 
 // =========================================================
-// AWARD IMAGES
+// EXISTING AWARD IMAGES
 // =========================================================
 
 import award1 from "../assets/images/award1.jpeg";
@@ -19,7 +21,15 @@ import award4 from "../assets/images/award4.jpeg";
 import award5 from "../assets/images/award2.jpg.jpeg";
 
 // =========================================================
-// AWARDS DATA
+// NEW BHARAT ENTREPRENEURS AWARD IMAGES
+// =========================================================
+
+import bharatAward1 from "../assets/images/bharat-award-1.jpeg";
+import bharatAward2 from "../assets/images/bharat-award-2.jpeg";
+import bharatAward3 from "../assets/images/bharat-award-3.jpeg";
+
+// =========================================================
+// AWARD GALLERY IMAGES
 // =========================================================
 
 const awardImages = [
@@ -46,6 +56,42 @@ const awardImages = [
 ];
 
 // =========================================================
+// AWARDS / RECOGNITION DATA
+// =========================================================
+
+const awardStories = [
+  {
+    id: "bharat-entrepreneurs-award",
+
+    title: "Bharat Entrepreneurs Award",
+
+    category: "State-wise Category",
+
+    location: "New Delhi",
+
+    date: "3 October",
+
+    description:
+      "Mr. Arun Kumar Srivastava, Founder of GeneBio Healthcare, was honoured with the Bharat Entrepreneurs Award at the 5th Bharat Entrepreneurship Summit for his contribution to indigenous diagnostic manufacturing from Uttar Pradesh.",
+
+    images: [
+      {
+        src: bharatAward1,
+        alt: "GeneBio Healthcare receiving Bharat Entrepreneurs Award",
+      },
+      {
+        src: bharatAward2,
+        alt: "Bharat Entrepreneurs Award ceremony",
+      },
+      {
+        src: bharatAward3,
+        alt: "GeneBio Healthcare Bharat Entrepreneurs Award recognition",
+      },
+    ],
+  },
+];
+
+// =========================================================
 // COMPONENT
 // =========================================================
 
@@ -53,7 +99,7 @@ export default function AwardsCollage() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // =========================================================
-  // MOBILE CAROUSEL
+  // MOBILE AWARD CAROUSEL
   // =========================================================
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -79,9 +125,7 @@ export default function AwardsCollage() {
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
 
-    setCarouselIndex(
-      emblaApi.selectedScrollSnap()
-    );
+    setCarouselIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
   useEffect(() => {
@@ -102,8 +146,8 @@ export default function AwardsCollage() {
   // OPEN IMAGE
   // =========================================================
 
-  const openImage = (index) => {
-    setSelectedImage(index);
+  const openImage = (image) => {
+    setSelectedImage(image);
   };
 
   // =========================================================
@@ -119,12 +163,19 @@ export default function AwardsCollage() {
   // =========================================================
 
   const nextImage = useCallback(() => {
-    setSelectedImage((prev) => {
-      if (prev === null) return null;
+    setSelectedImage((current) => {
+      if (!current) return null;
 
-      return (
-        (prev + 1) % awardImages.length
+      const images = awardStories[0].images;
+
+      const currentIndex = images.findIndex(
+        (image) => image.src === current.src
       );
+
+      const nextIndex =
+        (currentIndex + 1) % images.length;
+
+      return images[nextIndex];
     });
   }, []);
 
@@ -133,13 +184,20 @@ export default function AwardsCollage() {
   // =========================================================
 
   const prevImage = useCallback(() => {
-    setSelectedImage((prev) => {
-      if (prev === null) return null;
+    setSelectedImage((current) => {
+      if (!current) return null;
 
-      return (
-        (prev - 1 + awardImages.length) %
-        awardImages.length
+      const images = awardStories[0].images;
+
+      const currentIndex = images.findIndex(
+        (image) => image.src === current.src
       );
+
+      const previousIndex =
+        (currentIndex - 1 + images.length) %
+        images.length;
+
+      return images[previousIndex];
     });
   }, []);
 
@@ -148,7 +206,7 @@ export default function AwardsCollage() {
   // =========================================================
 
   useEffect(() => {
-    if (selectedImage === null) return;
+    if (!selectedImage) return;
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -184,14 +242,14 @@ export default function AwardsCollage() {
   return (
     <>
       {/* =====================================================
-          AWARDS SECTION
+          AWARDS & RECOGNITION SECTION
       ===================================================== */}
 
       <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-[1180px] px-5 md:px-6 lg:px-8">
 
           {/* =================================================
-              HEADER
+              SECTION HEADER
           ================================================= */}
 
           <div className="mb-10 text-center md:mb-14">
@@ -225,75 +283,256 @@ export default function AwardsCollage() {
             </motion.h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-[#666]">
-              Celebrating the people and milestones that
-              continue to shape GeneBio Healthcare's journey.
+              Celebrating the milestones and recognitions
+              that continue to shape GeneBio Healthcare's
+              journey.
             </p>
 
           </div>
 
           {/* =================================================
+              FEATURED NEW AWARD
+          ================================================= */}
+
+          {awardStories.map((award) => (
+            <motion.article
+              key={award.id}
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+              className="
+                mb-16
+                overflow-hidden
+                rounded-[28px]
+                border
+                border-[#E6EEF2]
+                bg-[#F8FCFE]
+                shadow-[0_12px_45px_rgba(0,0,0,0.06)]
+                md:mb-20
+              "
+            >
+              <div className="grid lg:grid-cols-12">
+
+                {/* =================================================
+                    AWARD INFORMATION
+                ================================================= */}
+
+                <div
+                  className="
+                    flex
+                    flex-col
+                    justify-center
+                    px-6
+                    py-8
+                    sm:px-8
+                    md:px-10
+                    lg:col-span-5
+                    lg:px-12
+                    lg:py-12
+                  "
+                >
+                  {/* LABEL */}
+
+                  <div className="mb-5 flex w-fit items-center gap-2 rounded-full bg-[#E9F8FD] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[#29BDF4]">
+                    <Award size={14} />
+
+                    Latest Recognition
+                  </div>
+
+                  {/* TITLE */}
+
+                  <h3
+                    className="
+                      text-[28px]
+                      font-bold
+                      leading-[1.15]
+                      text-[#202020]
+                      sm:text-[34px]
+                      lg:text-[38px]
+                    "
+                  >
+                    {award.title}
+                  </h3>
+
+                  {/* CATEGORY */}
+
+                  <p className="mt-3 text-[15px] font-semibold text-[#29BDF4]">
+                    {award.category}
+                  </p>
+
+                  {/* LOCATION + DATE */}
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+
+                    <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[12px] font-medium text-[#555] shadow-sm">
+                      <MapPin
+                        size={14}
+                        className="text-[#29BDF4]"
+                      />
+
+                      {award.location}
+                    </div>
+
+                    <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[12px] font-medium text-[#555] shadow-sm">
+                      <CalendarDays
+                        size={14}
+                        className="text-[#29BDF4]"
+                      />
+
+                      {award.date}
+                    </div>
+
+                  </div>
+
+                  {/* DESCRIPTION */}
+
+                  <p
+                    className="
+                      mt-6
+                      max-w-[500px]
+                      text-[14px]
+                      leading-7
+                      text-[#666]
+                      sm:text-[15px]
+                    "
+                  >
+                    {award.description}
+                  </p>
+
+                  {/* SMALL DIVIDER */}
+
+                  <div className="mt-7 flex items-center gap-3">
+                    <span className="h-[2px] w-10 bg-[#29BDF4]" />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#999]">
+                      A moment worth celebrating
+                    </span>
+                  </div>
+
+                </div>
+
+                {/* =================================================
+                    AWARD IMAGES
+                ================================================= */}
+
+                <div
+                  className="
+                    p-3
+                    sm:p-4
+                    lg:col-span-7
+                  "
+                >
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+
+                    {/* MAIN IMAGE */}
+
+                    <AwardImage
+                      image={award.images[0]}
+                      onClick={openImage}
+                      className="
+                        col-span-2
+                        h-[260px]
+                        sm:h-[340px]
+                      "
+                    />
+
+                    {/* SECOND IMAGE */}
+
+                    <AwardImage
+                      image={award.images[1]}
+                      onClick={openImage}
+                      className="
+                        h-[180px]
+                        sm:h-[230px]
+                      "
+                    />
+
+                    {/* THIRD IMAGE */}
+
+                    <AwardImage
+                      image={award.images[2]}
+                      onClick={openImage}
+                      className="
+                        h-[180px]
+                        sm:h-[230px]
+                      "
+                    />
+
+                  </div>
+                </div>
+
+              </div>
+            </motion.article>
+          ))}
+
+          {/* =================================================
+              EXISTING AWARD GALLERY
+          ================================================= */}
+
+          <div className="mb-10 text-center">
+
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#29BDF4]">
+              More Moments
+            </p>
+
+            <h3 className="mt-2 text-[25px] font-bold text-[#202020] sm:text-[30px]">
+              Our Journey of Recognition
+            </h3>
+
+          </div>
+
+          {/* =================================================
               DESKTOP COLLAGE
-              lg and above
-              
-              IMPORTANT:
-              No row-span conflicts.
           ================================================= */}
 
           <div className="hidden lg:grid lg:grid-cols-12 lg:gap-4">
 
-            {/* =================================================
-                LEFT LARGE IMAGE
-            ================================================= */}
+            {/* LEFT LARGE IMAGE */}
 
             <AwardImage
               image={awardImages[0]}
-              index={0}
               onClick={openImage}
               className="col-span-7 h-[620px]"
             />
 
-            {/* =================================================
-                RIGHT SIDE
-            ================================================= */}
+            {/* RIGHT SIDE */}
 
             <div className="col-span-5 flex flex-col gap-4">
 
-              {/* IMAGE 2 */}
-
               <AwardImage
                 image={awardImages[1]}
-                index={1}
                 onClick={openImage}
                 className="h-[200px]"
               />
-
-              {/* IMAGE 3 */}
 
               <AwardImage
                 image={awardImages[2]}
-                index={2}
                 onClick={openImage}
                 className="h-[200px]"
               />
 
-              {/* IMAGE 4 */}
-
               <AwardImage
                 image={awardImages[3]}
-                index={3}
                 onClick={openImage}
                 className="h-[200px]"
               />
 
             </div>
 
-            {/* =================================================
-                IMAGE 5
-            ================================================= */}
+            {/* BOTTOM IMAGE */}
 
             <AwardImage
               image={awardImages[4]}
-              index={4}
               onClick={openImage}
               className="col-span-12 mt-4 h-[300px]"
             />
@@ -305,8 +544,6 @@ export default function AwardsCollage() {
           ================================================= */}
 
           <div className="lg:hidden">
-
-            {/* Carousel */}
 
             <div
               ref={emblaRef}
@@ -322,9 +559,13 @@ export default function AwardsCollage() {
                     >
                       <AwardImage
                         image={image}
-                        index={index}
                         onClick={openImage}
-                        className="h-[340px] w-full sm:h-[450px] md:h-[500px]"
+                        className="
+                          h-[340px]
+                          w-full
+                          sm:h-[450px]
+                          md:h-[500px]
+                        "
                       />
                     </div>
                   )
@@ -333,26 +574,39 @@ export default function AwardsCollage() {
               </div>
             </div>
 
-            {/* =================================================
-                MOBILE CONTROLS
-            ================================================= */}
+            {/* CONTROLS */}
 
             <div className="mt-6 flex items-center justify-between">
-
-              {/* Previous */}
 
               <button
                 type="button"
                 onClick={scrollPrev}
                 aria-label="Previous award"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D8EAF3] bg-white text-[#202020] shadow-sm transition hover:border-[#29BDF4] hover:bg-[#29BDF4] hover:text-white"
+                className="
+                  flex
+                  h-11
+                  w-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-[#D8EAF3]
+                  bg-white
+                  text-[#202020]
+                  shadow-sm
+                  transition
+                  hover:border-[#29BDF4]
+                  hover:bg-[#29BDF4]
+                  hover:text-white
+                "
               >
                 <ChevronLeft size={20} />
               </button>
 
-              {/* Dots */}
+              {/* DOTS */}
 
               <div className="flex items-center gap-2">
+
                 {awardImages.map(
                   (_, index) => (
                     <button
@@ -372,22 +626,37 @@ export default function AwardsCollage() {
                     />
                   )
                 )}
-              </div>
 
-              {/* Next */}
+              </div>
 
               <button
                 type="button"
                 onClick={scrollNext}
                 aria-label="Next award"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D8EAF3] bg-white text-[#202020] shadow-sm transition hover:border-[#29BDF4] hover:bg-[#29BDF4] hover:text-white"
+                className="
+                  flex
+                  h-11
+                  w-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-[#D8EAF3]
+                  bg-white
+                  text-[#202020]
+                  shadow-sm
+                  transition
+                  hover:border-[#29BDF4]
+                  hover:bg-[#29BDF4]
+                  hover:text-white
+                "
               >
                 <ChevronRight size={20} />
               </button>
 
             </div>
 
-            {/* Counter */}
+            {/* COUNTER */}
 
             <div className="mt-3 text-center text-xs font-medium text-[#888]">
               {carouselIndex + 1} /{" "}
@@ -404,7 +673,7 @@ export default function AwardsCollage() {
       ===================================================== */}
 
       <AnimatePresence>
-        {selectedImage !== null && (
+        {selectedImage && (
           <motion.div
             initial={{
               opacity: 0,
@@ -415,17 +684,44 @@ export default function AwardsCollage() {
             exit={{
               opacity: 0,
             }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-4 md:p-8"
+            className="
+              fixed
+              inset-0
+              z-[9999]
+              flex
+              items-center
+              justify-center
+              bg-black/95
+              p-4
+              md:p-8
+            "
             onClick={closeImage}
           >
-
             {/* CLOSE */}
 
             <button
               type="button"
               onClick={closeImage}
               aria-label="Close gallery"
-              className="absolute right-4 top-4 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 md:right-8 md:top-8"
+              className="
+                absolute
+                right-4
+                top-4
+                z-30
+                flex
+                h-11
+                w-11
+                items-center
+                justify-center
+                rounded-full
+                bg-white/10
+                text-white
+                backdrop-blur-md
+                transition
+                hover:bg-white/20
+                md:right-8
+                md:top-8
+              "
             >
               <X size={22} />
             </button>
@@ -439,21 +735,35 @@ export default function AwardsCollage() {
                 prevImage();
               }}
               aria-label="Previous award"
-              className="absolute left-3 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 md:left-8"
+              className="
+                absolute
+                left-3
+                top-1/2
+                z-30
+                flex
+                h-11
+                w-11
+                -translate-y-1/2
+                items-center
+                justify-center
+                rounded-full
+                bg-white/10
+                text-white
+                backdrop-blur-md
+                transition
+                hover:bg-white/20
+                md:left-8
+              "
             >
               <ChevronLeft size={24} />
             </button>
 
-            {/* FULL IMAGE */}
+            {/* IMAGE */}
 
             <motion.img
-              key={selectedImage}
-              src={
-                awardImages[selectedImage].src
-              }
-              alt={
-                awardImages[selectedImage].alt
-              }
+              key={selectedImage.src}
+              src={selectedImage.src}
+              alt={selectedImage.alt}
               initial={{
                 opacity: 0,
                 scale: 0.95,
@@ -468,7 +778,13 @@ export default function AwardsCollage() {
               onClick={(event) =>
                 event.stopPropagation()
               }
-              className="max-h-[88vh] max-w-[85vw] rounded-xl object-contain shadow-2xl"
+              className="
+                max-h-[88vh]
+                max-w-[85vw]
+                rounded-xl
+                object-contain
+                shadow-2xl
+              "
             />
 
             {/* NEXT */}
@@ -480,17 +796,28 @@ export default function AwardsCollage() {
                 nextImage();
               }}
               aria-label="Next award"
-              className="absolute right-3 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition hover:bg-white/20 md:right-8"
+              className="
+                absolute
+                right-3
+                top-1/2
+                z-30
+                flex
+                h-11
+                w-11
+                -translate-y-1/2
+                items-center
+                justify-center
+                rounded-full
+                bg-white/10
+                text-white
+                backdrop-blur-md
+                transition
+                hover:bg-white/20
+                md:right-8
+              "
             >
               <ChevronRight size={24} />
             </button>
-
-            {/* COUNTER */}
-
-            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
-              {selectedImage + 1} /{" "}
-              {awardImages.length}
-            </div>
 
           </motion.div>
         )}
@@ -505,59 +832,89 @@ export default function AwardsCollage() {
 
 function AwardImage({
   image,
-  index,
   onClick,
   className = "",
 }) {
   return (
     <motion.button
       type="button"
-      onClick={() => onClick(index)}
-      initial={{
-        opacity: 0,
-        y: 25,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.08,
-      }}
+      onClick={() => onClick(image)}
       whileHover={{
         y: -4,
       }}
-      className={`group relative min-h-0 overflow-hidden rounded-[22px] bg-[#F4F7F9] text-left shadow-[0_8px_30px_rgba(0,0,0,0.06)] ${className}`}
+      className={`
+        group
+        relative
+        min-h-0
+        overflow-hidden
+        rounded-[20px]
+        bg-[#F4F7F9]
+        text-left
+        shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+        ${className}
+      `}
     >
-
       {/* IMAGE */}
 
       <img
         src={image.src}
         alt={image.alt}
-        className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
+        className="
+          absolute
+          inset-0
+          h-full
+          w-full
+          object-cover
+          transition
+          duration-700
+          ease-out
+          group-hover:scale-[1.04]
+        "
       />
 
       {/* OVERLAY */}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+      <div
+        className="
+          absolute
+          inset-0
+          bg-gradient-to-t
+          from-black/50
+          via-transparent
+          to-transparent
+          opacity-0
+          transition
+          duration-500
+          group-hover:opacity-100
+        "
+      />
 
-      {/* VIEW AWARD */}
+      {/* VIEW */}
 
-      <div className="absolute bottom-5 left-5 translate-y-3 rounded-full bg-white/95 px-4 py-2 text-xs font-semibold text-[#202020] opacity-0 shadow-lg backdrop-blur-sm transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+      <div
+        className="
+          absolute
+          bottom-5
+          left-5
+          translate-y-3
+          rounded-full
+          bg-white/95
+          px-4
+          py-2
+          text-xs
+          font-semibold
+          text-[#202020]
+          opacity-0
+          shadow-lg
+          backdrop-blur-sm
+          transition
+          duration-500
+          group-hover:translate-y-0
+          group-hover:opacity-100
+        "
+      >
         View Award
       </div>
-
-      {/* NUMBER */}
-
-      <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-xs font-bold text-[#202020] opacity-0 shadow-md transition duration-500 group-hover:opacity-100">
-        {String(index + 1).padStart(2, "0")}
-      </div>
-
     </motion.button>
   );
 }

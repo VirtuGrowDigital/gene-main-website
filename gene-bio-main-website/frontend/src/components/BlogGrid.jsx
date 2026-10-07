@@ -3,10 +3,52 @@ import TrendingSidebar from "./TrendingSidebar";
 
 import blog1 from "../assets/images/malaria.jpeg";
 import blog2 from "../assets/images/dengueblog.jpeg";
-import blog3 from "../assets/images/blog3.png";
-import blog4 from "../assets/images/blog4.png";
+import blog3 from "../assets/images/chikungunya-blog.png";
+import blog4 from "../assets/images/leishmaniasis-blog.png";
+
+// ============================================================
+// BLOG DATA
+// ============================================================
 
 const blogs = [
+  // ============================================================
+  // CHIKUNGUNYA — NEW
+  // ============================================================
+
+  {
+    image: blog3,
+    author: "GeneBio Healthcare",
+    date: "October 07, 2026",
+    readTime: "8 min read",
+    slug: "chikungunya-symptoms-testing-prevention",
+    title:
+      "Chikungunya Symptoms, Testing & Prevention: What You Need to Know",
+    description: `A sudden fever accompanied by intense joint pain can be easy to mistake for dengue, flu or another viral infection.
+
+Understanding chikungunya symptoms, knowing when testing may be needed and taking steps to prevent mosquito bites can help reduce the impact of this mosquito-borne disease.`,
+  },
+
+  // ============================================================
+  // LEISHMANIASIS / KALA-AZAR — NEW
+  // ============================================================
+
+  {
+    image: blog4,
+    author: "GeneBio Healthcare",
+    date: "October 07, 2026",
+    readTime: "10 min read",
+    slug: "leishmaniasis-kala-azar-symptoms-testing-prevention",
+    title:
+      "Leishmaniasis (Kala-azar): Symptoms, Causes, Testing & Prevention",
+    description: `A fever that continues for weeks, unexplained weight loss or unusual weakness should never be ignored, especially in areas where leishmaniasis occurs.
+
+Learn about Kala-azar symptoms, transmission, diagnosis, rapid testing and prevention.`,
+  },
+
+  // ============================================================
+  // SWINE FLU — OLD
+  // ============================================================
+
   {
     image: blog1,
     author: "GeneBio Healthcare",
@@ -22,6 +64,10 @@ While the term "Swine Flu" often triggers public anxiety, medical microbiologist
 Accurate diagnosis, standardized sample collection, and clear risk stratification are critical to managing patient outcomes without straining diagnostic infrastructure.`,
   },
 
+  // ============================================================
+  // DENGUE — OLD
+  // ============================================================
+
   {
     image: blog2,
     author: "GeneBio Healthcare",
@@ -34,38 +80,23 @@ Accurate diagnosis, standardized sample collection, and clear risk stratificatio
 
 Understanding the early symptoms, recognising warning signs and taking simple preventive measures can help you respond to dengue more effectively.`,
   },
-
-  // {
-  //   image: blog3,
-  //   author: "Sarah Jenkins",
-  //   date: "Apr 29, 2024",
-  //   readTime: "10 min read",
-  //   slug: "genomic-data-privacy",
-  //   title: "The Ethics of Genomic Data Privacy",
-  //   description:
-  //     "Navigating patient consent in the era of large-scale bio-banking and DNA analytics.",
-  // },
-
-  // {
-  //   image: blog4,
-  //   author: "Robert Vance",
-  //   date: "Apr 20, 2024",
-  //   readTime: "6 min read",
-  //   slug: "respiratory-panel-innovation",
-  //   title: "Respiratory Panel Innovation: A New Era",
-  //   description:
-  //     "Why multi-pathogen testing is becoming the gold standard for seasonal respiratory surveillance.",
-  // },
 ];
+
+// ============================================================
+// COMPONENT
+// ============================================================
 
 export default function BlogGrid() {
   return (
-    <section className="bg-white pb-28">
-      <div className="mx-auto max-w-[1180px] px-5">
-        <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
+    <section className="bg-white pb-20 sm:pb-24 lg:pb-28">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
 
-          {/* LEFT BLOG GRID */}
-          <div className="grid gap-8 md:grid-cols-2">
+          {/* ==================================================
+              LEFT BLOG GRID
+          ================================================== */}
+
+          <div className="grid gap-7 sm:gap-8 md:grid-cols-2">
             {blogs.map((blog) => (
               <BlogCard
                 key={blog.slug}
@@ -74,7 +105,10 @@ export default function BlogGrid() {
             ))}
           </div>
 
-          {/* RIGHT SIDEBAR */}
+          {/* ==================================================
+              RIGHT SIDEBAR
+          ================================================== */}
+
           <aside className="space-y-8">
             <TrendingSidebar />
           </aside>
