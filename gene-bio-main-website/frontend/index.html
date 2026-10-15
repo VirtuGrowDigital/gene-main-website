@@ -1,13 +1,33 @@
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/png" href="public/genebio-logo.png" />
+    <link rel="icon" type="image/png" href="/genebio-logo.png" />
 
     <title>GeneBio Healthcare</title>
+
+    <!-- Google Analytics (GA4) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WJK3EQ2529"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "G-WJK3EQ2529");
+    </script>
+    <!-- End Google Analytics -->
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
