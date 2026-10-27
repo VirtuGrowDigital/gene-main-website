@@ -1,3 +1,4 @@
+
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
@@ -8,56 +9,123 @@ import {
   Award,
   MapPin,
   CalendarDays,
+  ExternalLink,
 } from "lucide-react";
 
-// Existing award images
+// =========================================================
+// EXTERNAL AWARD LINKS
+// =========================================================
+
+const AWARD_LINKS = {
+  entrepreneur:
+    "https://www.entrepreneurindia.com/award-winners.php",
+  bharat:
+    "https://eaiindia.com/media-coverage.aspx",
+  healthcare:
+    "https://health.economictimes.indiatimes.com/healthcare-awards/winners-list",
+  gdphd:
+    "https://gdphdhealth.org/#/pib1",
+};
+
+// =========================================================
+// EXISTING AWARD IMAGES
+// =========================================================
+
 import award1 from "../assets/images/award1.jpeg";
 import award2 from "../assets/images/award2.jpeg";
 import award3 from "../assets/images/award3.jpeg";
 import award4 from "../assets/images/award4.jpeg";
 import award5 from "../assets/images/award2.jpg.jpeg";
 
-// Bharat Entrepreneurs Award images
+// =========================================================
+// BHARAT ENTREPRENEURS AWARD IMAGES
+// =========================================================
+
 import bharatAward1 from "../assets/images/bharat-award-1.jpeg";
 import bharatAward2 from "../assets/images/bharat-award-2.jpeg";
 import bharatAward3 from "../assets/images/bharat-award-3.jpeg";
 
-// Entrepreneur India Awards 2026 images
+// =========================================================
+// ENTREPRENEUR INDIA AWARDS 2026
+// =========================================================
+
 import entrepreneurAward1 from "../assets/images/enter1.jpeg";
 import entrepreneurAward2 from "../assets/images/enter2.jpeg";
 import entrepreneurAward3 from "../assets/images/enter3.jpeg";
 import entrepreneurAward4 from "../assets/images/enter4.jpeg";
 
-// Entrepreneur India Awards images
+// =========================================================
+// ENTREPRENEUR AWARD IMAGES
+// =========================================================
+
 const entrepreneurImages = [
   {
     src: entrepreneurAward1,
     alt: "Arun Kumar Srivastava receiving the Entrepreneur India Award 2026",
+    link: AWARD_LINKS.entrepreneur,
+    linkLabel: "View Official Award Winners",
   },
   {
     src: entrepreneurAward2,
     alt: "Entrepreneur India Awards 2026 celebration",
+    link: AWARD_LINKS.entrepreneur,
+    linkLabel: "View Official Award Winners",
   },
   {
     src: entrepreneurAward3,
     alt: "Entrepreneur India Awards 2026 presentation",
+    link: AWARD_LINKS.entrepreneur,
+    linkLabel: "View Official Award Winners",
   },
   {
     src: entrepreneurAward4,
     alt: "Entrepreneur India Awards 2026 trophy",
+    link: AWARD_LINKS.entrepreneur,
+    linkLabel: "View Official Award Winners",
   },
 ];
 
-// Existing gallery images
+// =========================================================
+// EXISTING GALLERY IMAGES
+// =========================================================
+
 const galleryImages = [
-  { src: award1, alt: "GeneBio Healthcare Award" },
-  { src: award2, alt: "GeneBio Healthcare Award Ceremony" },
-  { src: award3, alt: "GeneBio Healthcare Recognition" },
-  { src: award4, alt: "GeneBio Healthcare Award Presentation" },
-  { src: award5, alt: "GeneBio Healthcare Achievement" },
+  {
+    src: award1,
+    alt: "GeneBio Healthcare award",
+    link: AWARD_LINKS.healthcare,
+    linkLabel: "View Healthcare Award Winners",
+  },
+  {
+    src: award2,
+    alt: "GeneBio Healthcare award ceremony",
+    link: AWARD_LINKS.healthcare,
+    linkLabel: "View Healthcare Award Winners",
+  },
+  {
+    src: award3,
+    alt: "GeneBio Healthcare recognition",
+    link: AWARD_LINKS.healthcare,
+    linkLabel: "View Healthcare Award Winners",
+  },
+  {
+    src: award4,
+    alt: "GeneBio Healthcare award presentation",
+    link: AWARD_LINKS.healthcare,
+    linkLabel: "View Healthcare Award Winners",
+  },
+  {
+    src: award5,
+    alt: "GeneBio Healthcare achievement",
+    link: AWARD_LINKS.healthcare,
+    linkLabel: "View Healthcare Award Winners",
+  },
 ];
 
-// Award stories: newest award is intentionally first
+// =========================================================
+// AWARD STORIES — LATEST AWARD FIRST
+// =========================================================
+
 const awardStories = [
   {
     id: "entrepreneur-india-award-2026",
@@ -66,8 +134,10 @@ const awardStories = [
     location: "Bharat Mandapam, New Delhi",
     date: "5 October 2026",
     description:
-      "Arun Kumar Srivastava, Founder of GeneBio Healthcare, was named a winner at the 16th Entrepreneur Awards 2026 by Entrepreneur India, recognising his contribution to India’s in-vitro diagnostics sector and indigenous diagnostic manufacturing.",
+      "Arun Kumar Srivastava, Founder of GeneBio Healthcare, was named a winner at the 16th Entrepreneur Awards 2026 by Entrepreneur India, recognising his contribution to India's in-vitro diagnostics sector and indigenous diagnostic manufacturing.",
     images: entrepreneurImages,
+    link: AWARD_LINKS.entrepreneur,
+    linkLabel: "View Official Award Winners",
     featured: true,
   },
   {
@@ -82,18 +152,78 @@ const awardStories = [
       {
         src: bharatAward1,
         alt: "Bharat Entrepreneurs Award presentation",
+        link: AWARD_LINKS.bharat,
+        linkLabel: "View Media Coverage",
       },
       {
         src: bharatAward2,
         alt: "Bharat Entrepreneurs Award ceremony",
+        link: AWARD_LINKS.bharat,
+        linkLabel: "View Media Coverage",
       },
       {
         src: bharatAward3,
         alt: "Bharat Entrepreneurs Award recognition",
+        link: AWARD_LINKS.bharat,
+        linkLabel: "View Media Coverage",
       },
     ],
+    link: AWARD_LINKS.bharat,
+    linkLabel: "View Media Coverage",
   },
 ];
+
+// =========================================================
+// REUSABLE AWARD IMAGE
+// =========================================================
+
+function AwardImage({
+  image,
+  images,
+  onClick,
+  className = "",
+}) {
+  return (
+    <div
+      className={`group relative min-h-0 overflow-hidden rounded-[20px] bg-[#F3F7F9] shadow-[0_8px_28px_rgba(0,0,0,0.06)] sm:rounded-[24px] ${className}`}
+    >
+      <button
+        type="button"
+        onClick={() => onClick(image, images)}
+        aria-label={`Enlarge ${image.alt}`}
+        className="absolute inset-0 z-0 h-full w-full cursor-zoom-in"
+      >
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        />
+      </button>
+
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+
+      {image.link && (
+        <a
+          href={image.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={image.linkLabel || "View award details"}
+          className="absolute bottom-3 left-3 z-[2] inline-flex min-h-9 max-w-[calc(100%-24px)] items-center gap-2 rounded-full bg-white/95 px-3 py-2 text-[10px] font-bold text-[#202020] shadow-lg transition-colors hover:bg-[#29BDF4] sm:bottom-4 sm:left-4 sm:px-4 sm:text-xs"
+        >
+          <span className="truncate">
+            {image.linkLabel || "View Award Details"}
+          </span>
+          <ExternalLink size={13} className="shrink-0" />
+        </a>
+      )}
+    </div>
+  );
+}
+
+// =========================================================
+// MAIN AWARDS COMPONENT
+// =========================================================
 
 export default function AwardsCollage() {
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -144,6 +274,7 @@ export default function AwardsCollage() {
       if (!current) return null;
 
       const { image, images } = current;
+
       const currentIndex = images.findIndex(
         (item) => item.src === image.src
       );
@@ -153,7 +284,8 @@ export default function AwardsCollage() {
       }
 
       const nextIndex =
-        (currentIndex + direction + images.length) % images.length;
+        (currentIndex + direction + images.length) %
+        images.length;
 
       return {
         image: images[nextIndex],
@@ -197,10 +329,9 @@ export default function AwardsCollage() {
 
   return (
     <>
-      <section className="bg-white py-14 sm:py-20 lg:py-24">
+      <section className="bg-white py-10 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-
-          {/* Main heading */}
+          {/* MAIN HEADING */}
           <div className="mb-10 text-center sm:mb-14">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#EEF9FD] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#29BDF4] sm:text-xs">
               <Award size={15} />
@@ -209,17 +340,19 @@ export default function AwardsCollage() {
 
             <h2 className="text-3xl font-bold leading-tight text-[#202020] sm:text-4xl lg:text-[46px]">
               Moments of{" "}
-              <span className="text-[#29BDF4]">Excellence</span>
+              <span className="text-[#29BDF4]">
+                Excellence
+              </span>
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#666] sm:text-base">
               Celebrating achievements, industry recognition, and
-              milestones in GeneBio Healthcare’s journey.
+              milestones in GeneBio Healthcare's journey.
             </p>
           </div>
 
-          {/* AWARD STORIES — NEWEST AWARD APPEARS FIRST */}
-          {awardStories.map((award, awardIndex) => (
+          {/* AWARD STORIES — NEWEST AWARD FIRST */}
+          {awardStories.map((award) => (
             <motion.article
               key={award.id}
               initial={{ opacity: 0, y: 24 }}
@@ -233,12 +366,13 @@ export default function AwardsCollage() {
               }`}
             >
               <div className="grid lg:grid-cols-12">
-
-                {/* Award details */}
+                {/* AWARD DETAILS */}
                 <div className="flex flex-col justify-center p-5 sm:p-8 lg:col-span-5 lg:p-10 xl:p-12">
                   <div className="mb-5 flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-[0.15em] text-[#29BDF4] shadow-sm sm:text-xs">
                     <Award size={15} />
-                    {award.featured ? "Latest Recognition" : "Award Recognition"}
+                    {award.featured
+                      ? "Latest Recognition"
+                      : "Award Recognition"}
                   </div>
 
                   <h3 className="text-[27px] font-bold leading-tight text-[#202020] sm:text-[32px] lg:text-[36px]">
@@ -277,14 +411,26 @@ export default function AwardsCollage() {
                       A moment worth celebrating
                     </span>
                   </div>
+
+                  {award.link && (
+                    <a
+                      href={award.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-full bg-[#29BDF4] px-5 py-3 text-xs font-bold text-white transition hover:bg-[#159DCE] sm:text-sm"
+                    >
+                      {award.linkLabel}
+                      <ExternalLink size={15} />
+                    </a>
+                  )}
                 </div>
 
-                {/* Rounded award photos */}
+                {/* AWARD PHOTOS */}
                 <div className="p-3 sm:p-4 lg:col-span-7 lg:p-5">
                   <div className="grid grid-cols-2 gap-3 sm:gap-4">
                     {award.images.map((image, index) => (
                       <AwardImage
-                        key={image.src}
+                        key={`${award.id}-${image.src}`}
                         image={image}
                         images={award.images}
                         onClick={openImage}
@@ -301,7 +447,7 @@ export default function AwardsCollage() {
             </motion.article>
           ))}
 
-          {/* Existing gallery */}
+          {/* EXISTING AWARD GALLERY */}
           <div className="mt-14 sm:mt-20">
             <div className="mb-8 text-center">
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#29BDF4] sm:text-xs">
@@ -313,7 +459,7 @@ export default function AwardsCollage() {
               </h3>
             </div>
 
-            {/* Desktop gallery */}
+            {/* DESKTOP GALLERY */}
             <div className="hidden grid-cols-12 gap-4 lg:grid">
               <AwardImage
                 image={galleryImages[0]}
@@ -345,7 +491,7 @@ export default function AwardsCollage() {
               ))}
             </div>
 
-            {/* Mobile and tablet gallery carousel */}
+            {/* MOBILE AND TABLET CAROUSEL */}
             <div className="lg:hidden">
               <div ref={emblaRef} className="overflow-hidden">
                 <div className="flex">
@@ -365,7 +511,7 @@ export default function AwardsCollage() {
                 </div>
               </div>
 
-              {/* Carousel controls */}
+              {/* CAROUSEL CONTROLS */}
               <div className="mt-5 flex items-center justify-between">
                 <button
                   type="button"
@@ -410,7 +556,7 @@ export default function AwardsCollage() {
         </div>
       </section>
 
-      {/* Fullscreen viewer */}
+      {/* FULLSCREEN IMAGE VIEWER */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -446,16 +592,37 @@ export default function AwardsCollage() {
               </button>
             )}
 
-            <motion.img
+            <motion.div
               key={selectedImage.image.src}
-              src={selectedImage.image.src}
-              alt={selectedImage.image.alt}
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.25 }}
               onClick={(event) => event.stopPropagation()}
-              className="max-h-[85vh] max-w-[82vw] rounded-2xl object-contain shadow-2xl"
-            />
+              className="flex max-h-full max-w-6xl flex-col items-center"
+            >
+              <img
+                src={selectedImage.image.src}
+                alt={selectedImage.image.alt}
+                className="max-h-[75vh] max-w-[82vw] rounded-2xl object-contain shadow-2xl sm:max-h-[80vh]"
+              />
+
+              <p className="mt-3 max-w-[80vw] text-center text-xs text-white/70 sm:text-sm">
+                {selectedImage.image.alt}
+              </p>
+
+              {selectedImage.image.link && (
+                <a
+                  href={selectedImage.image.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-[#29BDF4] px-5 py-2.5 text-xs font-bold text-white transition hover:bg-[#159DCE] sm:text-sm"
+                >
+                  {selectedImage.image.linkLabel ||
+                    "View Award Details"}
+                  <ExternalLink size={15} />
+                </a>
+              )}
+            </motion.div>
 
             {selectedImage.images.length > 1 && (
               <button
@@ -474,36 +641,5 @@ export default function AwardsCollage() {
         )}
       </AnimatePresence>
     </>
-  );
-}
-
-// Reusable rounded image card
-function AwardImage({
-  image,
-  images,
-  onClick,
-  className = "",
-}) {
-  return (
-    <motion.button
-      type="button"
-      onClick={() => onClick(image, images)}
-      whileHover={{ y: -3 }}
-      aria-label={`View ${image.alt}`}
-      className={`group relative block min-h-0 overflow-hidden rounded-[20px] bg-[#F3F7F9] text-left shadow-[0_8px_28px_rgba(0,0,0,0.06)] sm:rounded-[24px] ${className}`}
-    >
-      <img
-        src={image.src}
-        alt={image.alt}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-      <div className="absolute bottom-4 left-4 translate-y-2 rounded-full bg-white/95 px-4 py-2 text-xs font-semibold text-[#202020] opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-        View Image
-      </div>
-    </motion.button>
   );
 }
