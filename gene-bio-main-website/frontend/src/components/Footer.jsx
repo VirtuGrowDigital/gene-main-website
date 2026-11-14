@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import {
@@ -28,10 +29,7 @@ export default function Footer() {
 
         <div className="grid gap-14 px-6 pb-10 pt-14 sm:px-10 lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:gap-16 lg:px-16">
 
-          {/* =================================================
-              LEFT SECTION
-          ================================================= */}
-
+          {/* LEFT SECTION */}
           <div>
 
             {/* Logo */}
@@ -48,31 +46,24 @@ export default function Footer() {
               Reg. Off.: Sec-F, E-635 LDA Colony, Kanpur Road,
               Lucknow-226012
               <br />
-
               Production Unit: A-6/1A/2,
               Industrial Area, Kursi Road, Distt: Barabanki (U.P)
               225302
             </p>
 
             {/* Contact Details */}
-            <div className="mt-5 space-y-2 text-[16px] font-extralight text-[#E1E1E1]">
+            <div className="mt-5 space-y-3 text-[15px] font-extralight text-[#E1E1E1]">
 
               {/* Email */}
               <a
                 href="mailto:sp@genebiohealthcare.com"
                 className="flex w-fit items-center gap-2 transition hover:text-[#24B8F4]"
               >
-                <Mail
-                  size={16}
-                  className="shrink-0"
-                />
-
-                <span>
-                  sp@genebiohealthcare.com
-                </span>
+                <Mail size={16} className="shrink-0" />
+                <span>sp@genebiohealthcare.com</span>
               </a>
 
-              {/* Phone */}
+              {/* Global Support */}
               <a
                 href="tel:18008911499"
                 className="block w-fit transition hover:text-[#24B8F4]"
@@ -87,12 +78,25 @@ export default function Footer() {
                 +91 9236392922
               </a>
 
+              {/* OEM and Export Enquiries */}
+              <div className="pt-3">
+                <p className="mb-2 text-[13px] font-semibold text-[#24B8F4]">
+                  OEM & Export Enquiries
+                </p>
+
+                <a
+                  href="tel:+9196593983"
+                  className="block w-fit transition hover:text-[#24B8F4]"
+                >
+                  +91 96593983
+                </a>
+              </div>
+
             </div>
 
             {/* Social Links */}
             <div className="mt-8 flex gap-3">
 
-              {/* Facebook */}
               <a
                 href="https://www.facebook.com/share/1CoSdFA7Ti/"
                 target="_blank"
@@ -103,7 +107,6 @@ export default function Footer() {
                 <FaFacebookF size={14} />
               </a>
 
-              {/* Instagram */}
               <a
                 href="https://www.instagram.com/genebiohealthcareindia?igsh=NnJwMmh6eXUwbng4"
                 target="_blank"
@@ -114,7 +117,6 @@ export default function Footer() {
                 <FaInstagram size={15} />
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/company/genebio-healthcare/"
                 target="_blank"
@@ -125,7 +127,6 @@ export default function Footer() {
                 <FaLinkedinIn size={14} />
               </a>
 
-              {/* Email */}
               <a
                 href="mailto:sp@genebiohealthcare.com"
                 aria-label="Email GeneBio Healthcare"
@@ -135,21 +136,15 @@ export default function Footer() {
               </a>
 
             </div>
-
           </div>
 
-          {/* =================================================
-              COMPANY
-          ================================================= */}
-
+          {/* COMPANY */}
           <div>
-
             <h3 className="font-semibold text-[#24B8F4]">
               Company
             </h3>
 
             <div className="mt-8 space-y-5">
-
               <Link
                 to="/company/about"
                 className="block text-[#E4E4E4] transition hover:text-white"
@@ -184,23 +179,16 @@ export default function Footer() {
               >
                 Global Presence
               </Link>
-
             </div>
-
           </div>
 
-          {/* =================================================
-              PARTNERS
-          ================================================= */}
-
+          {/* PARTNERS */}
           <div>
-
             <h3 className="font-semibold text-[#24B8F4]">
               Partners
             </h3>
 
             <div className="mt-8 space-y-5">
-
               <Link
                 to="/partners/distributor"
                 className="block text-[#E4E4E4] transition hover:text-white"
@@ -214,23 +202,16 @@ export default function Footer() {
               >
                 Bulk Pricing
               </Link>
-
             </div>
-
           </div>
 
-          {/* =================================================
-              RESOURCES
-          ================================================= */}
-
+          {/* RESOURCES */}
           <div>
-
             <h3 className="font-semibold text-[#24B8F4]">
               Resources
             </h3>
 
             <div className="mt-8 space-y-5">
-
               <Link
                 to="/resources/blogs"
                 className="block text-[#E4E4E4] transition hover:text-white"
@@ -251,32 +232,22 @@ export default function Footer() {
               >
                 Careers
               </Link>
-
             </div>
-
           </div>
 
         </div>
 
-        {/* =================================================
-            BOTTOM BAR
-        ================================================= */}
-
+        {/* BOTTOM BAR */}
         <div className="border-t border-white/10">
-
           <div className="mx-auto flex min-h-[52px] max-w-[1280px] items-center justify-center px-6 py-3 text-center">
-
             <p className="text-[13px] tracking-wide text-[#B6B6B6]">
               © {new Date().getFullYear()} GeneBio Healthcare.
               Precision Biotechnology & Clinical Innovation.
             </p>
-
           </div>
-
         </div>
 
       </div>
-
     </footer>
   );
 }

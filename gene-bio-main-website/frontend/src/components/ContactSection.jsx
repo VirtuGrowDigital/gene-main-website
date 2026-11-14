@@ -1,4 +1,6 @@
+
 import React, { useState } from "react";
+
 import phoneIcon from "../assets/icons/phone.png";
 import mailIcon from "../assets/icons/mail.png";
 
@@ -36,12 +38,12 @@ const ContactSection = () => {
       const data = await response.json();
 
       if (data.success) {
-        setStatus("Thank you! Your inquiry has been submitted successfully.");
+        setStatus(
+          "Thank you! Your inquiry has been submitted successfully."
+        );
         event.target.reset();
       } else {
-        setStatus(
-          "Something went wrong. Please try again."
-        );
+        setStatus("Something went wrong. Please try again.");
       }
     } catch (error) {
       setStatus(
@@ -56,7 +58,7 @@ const ContactSection = () => {
     <section className="bg-white py-20">
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          
+
           {/* LEFT SIDE */}
           <div>
             <h2 className="text-[42px] font-bold leading-none text-[#191C1D]">
@@ -68,8 +70,8 @@ const ContactSection = () => {
               requirements and provide tailored volume pricing.
             </p>
 
-            <div className="mt-12 space-y-5">
-              
+            <div className="mt-12 space-y-7">
+
               {/* EMAIL */}
               <div className="flex items-center gap-5">
                 <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#F2F6F7]">
@@ -94,7 +96,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              {/* PHONE */}
+              {/* GLOBAL SUPPORT */}
               <div className="flex items-center gap-5">
                 <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#F2F6F7]">
                   <img
@@ -117,17 +119,40 @@ const ContactSection = () => {
                   </a>
                 </div>
               </div>
+
+              {/* OEM AND EXPORT ENQUIRIES */}
+              <div className="flex items-center gap-5">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#F2F6F7]">
+                  <img
+                    src={phoneIcon}
+                    alt="OEM and Export Enquiries"
+                    className="h-6 w-6 object-contain"
+                  />
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#7D8A8C]">
+                    OEM & Export Enquiries
+                  </p>
+
+                  <a
+                    href="tel:+9196593983"
+                    className="mt-1 block text-[16px] font-semibold text-[#191C1D] transition hover:text-[#21CAFF]"
+                  >
+                    +91 96593983
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
 
           {/* FORM */}
           <div>
             <div className="rounded-[28px] bg-white p-8 shadow-[0_18px_50px_rgba(0,0,0,0.10)]">
-              
               <form onSubmit={handleSubmit}>
-                
                 <div className="grid gap-5 md:grid-cols-2">
-                  
+
                   {/* FULL NAME */}
                   <div>
                     <label className="mb-2 block text-[11px] font-semibold uppercase tracking-wide text-[#6A7475]">
@@ -170,25 +195,12 @@ const ContactSection = () => {
                     required
                     className="h-12 w-full rounded-lg border border-[#DDE5E7] px-4 text-[14px] outline-none focus:border-[#21CAFF]"
                   >
-                    <option value="">
-                      Select Inquiry Type
-                    </option>
-
-                    <option>
-                      Bulk Distribution Inquiry
-                    </option>
-
-                    <option>
-                      Become a Partner
-                    </option>
-
-                    <option>
-                      Product Support
-                    </option>
-
-                    <option>
-                      General Inquiry
-                    </option>
+                    <option value="">Select Inquiry Type</option>
+                    <option>Bulk Distribution Inquiry</option>
+                    <option>Become a Partner</option>
+                    <option>OEM & Export Enquiry</option>
+                    <option>Product Support</option>
+                    <option>General Inquiry</option>
                   </select>
                 </div>
 
@@ -210,6 +222,7 @@ const ContactSection = () => {
                 {/* STATUS MESSAGE */}
                 {status && (
                   <p
+                    role="status"
                     className={`mt-5 text-center text-[14px] font-medium ${
                       status.includes("successfully")
                         ? "text-green-600"
@@ -226,13 +239,12 @@ const ContactSection = () => {
                   disabled={isSubmitting}
                   className="mt-6 h-12 w-full rounded-lg bg-[#21CAFF] text-[14px] font-semibold text-white transition hover:bg-[#0EAEE5] disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  {isSubmitting
-                    ? "Submitting..."
-                    : "Submit Inquiry"}
+                  {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                 </button>
               </form>
             </div>
           </div>
+
         </div>
       </div>
     </section>
