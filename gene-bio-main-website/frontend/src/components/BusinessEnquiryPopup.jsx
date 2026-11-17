@@ -72,12 +72,12 @@ export default function BusinessEnquiryPopup() {
         type="button"
         onClick={() => setIsOpen(true)}
         aria-label="Open Business Enquiry"
-        className="fixed right-0 top-1/2 z-[90] flex -translate-y-1/2 items-center gap-2 rounded-l-lg bg-[#12344B] px-3 py-4 text-white shadow-lg transition-all duration-300 hover:bg-[#1C5272] hover:shadow-xl md:px-4"
+        className="fixed right-0 top-1/2 z-[90] flex -translate-y-1/2 items-center gap-2 rounded-l-lg bg-[#1b567e] px-3 py-4 text-white shadow-lg transition-all duration-300 hover:bg-[#1C5272] hover:shadow-xl md:px-4"
       >
         <BriefcaseBusiness size={18} />
 
         <span className="rotate-180 text-[10px] font-extrabold uppercase tracking-[0.13em] [writing-mode:vertical-rl]">
-          Business Enquiry
+          For OEM & Export Enquiries
         </span>
       </button>
 
