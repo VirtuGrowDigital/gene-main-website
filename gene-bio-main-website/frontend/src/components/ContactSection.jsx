@@ -139,7 +139,7 @@ const ContactSection = () => {
                     href="tel:+9196593983"
                     className="mt-1 block text-[16px] font-semibold text-[#191C1D] transition hover:text-[#21CAFF]"
                   >
-                    +91 96593983
+                    +9196593983
                   </a>
                 </div>
               </div>

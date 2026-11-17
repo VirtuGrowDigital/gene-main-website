@@ -88,7 +88,7 @@ export default function Footer() {
                   href="tel:+9196593983"
                   className="block w-fit transition hover:text-[#24B8F4]"
                 >
-                  +91 96593983
+                  +9196593983
                 </a>
               </div>
 
