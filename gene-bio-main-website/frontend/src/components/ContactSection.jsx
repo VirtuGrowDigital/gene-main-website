@@ -55,7 +55,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="bg-white py-20">
+    <section
+  id="contact"
+  className="scroll-mt-24 bg-white py-20"
+>
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
 
@@ -139,7 +142,7 @@ const ContactSection = () => {
                     href="tel:+9196593983"
                     className="mt-1 block text-[16px] font-semibold text-[#191C1D] transition hover:text-[#21CAFF]"
                   >
-                    +9196593983
+                    +91-9196593983
                   </a>
                 </div>
               </div>

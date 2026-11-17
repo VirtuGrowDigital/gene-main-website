@@ -1,3 +1,4 @@
+
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -19,73 +20,81 @@ import BlogDetails from "./pages/BlogDetails";
 
 import Careers from "./pages/Careers";
 
+// Global Business Enquiry Popup
+import BusinessEnquiryPopup from "./components/BusinessEnquiryPopup";
+
 function App() {
   return (
-    <Routes>
-      {/* Home */}
-      <Route path="/" element={<Home />} />
+    <>
+      <Routes>
+        {/* Home */}
+        <Route path="/" element={<Home />} />
 
-      {/* Products */}
-      <Route path="/products" element={<Products />} />
+        {/* Products */}
+        <Route path="/products" element={<Products />} />
 
-      {/* Company */}
-      <Route path="/company/about" element={<About />} />
+        {/* Company */}
+        <Route path="/company/about" element={<About />} />
 
-      <Route
-        path="/company/manufacturing"
-        element={<Manufacturing />}
-      />
+        <Route
+          path="/company/manufacturing"
+          element={<Manufacturing />}
+        />
 
-      <Route
-        path="/company/certifications"
-        element={<Certifications />}
-      />
+        <Route
+          path="/company/certifications"
+          element={<Certifications />}
+        />
 
-      <Route
-        path="/company/gallery"
-        element={<Gallery />}
-      />
+        <Route
+          path="/company/gallery"
+          element={<Gallery />}
+        />
 
-      <Route
-        path="/company/global-presence"
-        element={<GlobalPresence />}
-      />
+        <Route
+          path="/company/global-presence"
+          element={<GlobalPresence />}
+        />
 
-      {/* Partners */}
-      <Route
-        path="/partners/distributor"
-        element={<BecomeDistributor />}
-      />
+        {/* Partners */}
+        <Route
+          path="/partners/distributor"
+          element={<BecomeDistributor />}
+        />
 
-      <Route
-        path="/partners/bulk-pricing"
-        element={<BulkPricing />}
-      />
+        <Route
+          path="/partners/bulk-pricing"
+          element={<BulkPricing />}
+        />
 
-      {/* Blogs */}
-      <Route
-        path="/resources/blogs"
-        element={<Blogs />}
-      />
+        {/* Blogs */}
+        <Route
+          path="/resources/blogs"
+          element={<Blogs />}
+        />
 
-      {/* Blog Details */}
-      <Route
-        path="/resources/blogs/:slug"
-        element={<BlogDetails />}
-      />
+        {/* Blog Details */}
+        <Route
+          path="/resources/blogs/:slug"
+          element={<BlogDetails />}
+        />
 
-      {/* Events */}
-      <Route
-        path="/resources/events"
-        element={<Events />}
-      />
+        {/* Events */}
+        <Route
+          path="/resources/events"
+          element={<Events />}
+        />
 
-      {/* Careers */}
-      <Route
-        path="/careers"
-        element={<Careers />}
-      />
-    </Routes>
+        {/* Careers */}
+        <Route
+          path="/careers"
+          element={<Careers />}
+        />
+      </Routes>
+
+      {/* Available throughout the website */}
+      <BusinessEnquiryPopup />
+    </>
   );
 }
 
