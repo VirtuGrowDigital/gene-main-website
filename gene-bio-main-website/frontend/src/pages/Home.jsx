@@ -19,10 +19,11 @@ const Home = () => {
       <HeroSection />
       <TrustBar/>
       <GeneBioAdvantage/>
+      <AwardsCollage/>
       {/* <InnovationSpotlight/> */}
       <ManufacturingExcellence/>
       <ResearchDevelopment/>
-       <AwardsCollage/>
+       
       <GlobalDiagnostics/>
       <TrustCompliance/>
      

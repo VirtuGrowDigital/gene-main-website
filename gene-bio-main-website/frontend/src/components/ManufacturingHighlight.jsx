@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import labImage from "../assets/images/manufacturing-room.png";
+import labImage from "../assets/images/manufacturing-room.jpeg";
 
 export default function ManufacturingHighlight() {
   return (

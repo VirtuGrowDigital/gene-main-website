@@ -1,7 +1,8 @@
+
 import BlogCard from "./BlogCard";
 import TrendingSidebar from "./TrendingSidebar";
 
-import blog1 from "../assets/images/malaria.jpeg";
+import blog1 from "../assets/images/ai.jpeg";
 import blog2 from "../assets/images/dengueblog.jpeg";
 import blog3 from "../assets/images/chikungunya-blog.png";
 import blog4 from "../assets/images/leishmaniasis-blog.png";
@@ -12,8 +13,21 @@ import blog4 from "../assets/images/leishmaniasis-blog.png";
 
 const blogs = [
   // ============================================================
-  // CHIKUNGUNYA — NEW
+  // CHIKUNGUNYA
   // ============================================================
+    {
+    image: blog1,
+    author: "GeneBio Healthcare",
+    date: "November 20, 2026",
+    readTime: "12 min read",
+    slug: "ai-in-medical-diagnostics-artificial-intelligence-healthcare-2026",
+    title:
+      "AI in Medical Diagnostics: How Artificial Intelligence Is Transforming Healthcare in 2026",
+    description: `Artificial Intelligence is transforming healthcare by improving how diseases are detected, medical data is analysed and diagnostic decisions are supported.
+
+Explore how AI-powered medical imaging, automated laboratory systems, infectious disease detection and advanced data analysis are shaping the future of In Vitro Diagnostics (IVD) and healthcare technology.`,
+  },
+
 
   {
     image: blog3,
@@ -29,7 +43,7 @@ Understanding chikungunya symptoms, knowing when testing may be needed and takin
   },
 
   // ============================================================
-  // LEISHMANIASIS / KALA-AZAR — NEW
+  // LEISHMANIASIS / KALA-AZAR
   // ============================================================
 
   {
@@ -46,26 +60,12 @@ Learn about Kala-azar symptoms, transmission, diagnosis, rapid testing and preve
   },
 
   // ============================================================
-  // SWINE FLU — OLD
+  // AI IN MEDICAL DIAGNOSTICS — NEW
   // ============================================================
 
-  {
-    image: blog1,
-    author: "GeneBio Healthcare",
-    date: "August 30, 2026",
-    readTime: "8 min read",
-    slug: "swine-flu-h1n1-surge-in-lucknow",
-    title:
-      "Swine Flu (H1N1) Surge in Lucknow: Clinical Assessment, High-Risk Markers, and Diagnostic Protocols",
-    description: `With regional hospitals across Lucknow—including SGPGI (Sanjay Gandhi Post Graduate Institute of Medical Sciences), RMLIMS, and King George’s Medical University (KGMU)—reporting admissions for Influenza A (H1N1), respiratory illness surveillance is once again in sharp focus.
-
-While the term "Swine Flu" often triggers public anxiety, medical microbiologists and the Indian Council of Medical Research (ICMR) confirm that H1N1 (specifically the A/H1N1 pdm09 strain) now circulates as an endemic seasonal influenza virus.
-
-Accurate diagnosis, standardized sample collection, and clear risk stratification are critical to managing patient outcomes without straining diagnostic infrastructure.`,
-  },
 
   // ============================================================
-  // DENGUE — OLD
+  // DENGUE
   // ============================================================
 
   {
@@ -92,9 +92,7 @@ export default function BlogGrid() {
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
 
-          {/* ==================================================
-              LEFT BLOG GRID
-          ================================================== */}
+          {/* LEFT BLOG GRID */}
 
           <div className="grid gap-7 sm:gap-8 md:grid-cols-2">
             {blogs.map((blog) => (
@@ -105,9 +103,7 @@ export default function BlogGrid() {
             ))}
           </div>
 
-          {/* ==================================================
-              RIGHT SIDEBAR
-          ================================================== */}
+          {/* RIGHT SIDEBAR */}
 
           <aside className="space-y-8">
             <TrendingSidebar />

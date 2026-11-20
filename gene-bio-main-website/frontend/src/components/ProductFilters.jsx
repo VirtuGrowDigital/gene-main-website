@@ -1,4 +1,6 @@
+
 import { Download, Filter, Search } from "lucide-react";
+import Catalogue from "../assets/images/GeneBio.pdf";
 
 export default function ProductFilters({
   search,
@@ -21,7 +23,6 @@ export default function ProductFilters({
             bg-white
             p-4
             shadow-[0_15px_40px_rgba(0,0,0,0.12)]
-
             lg:max-w-fit
             lg:flex-row
             lg:items-center
@@ -56,7 +57,6 @@ export default function ProductFilters({
                 font-medium
                 text-[#0C95A5]
                 outline-none
-
                 lg:h-10
                 lg:w-[170px]
               "
@@ -92,18 +92,16 @@ export default function ProductFilters({
                 outline-none
                 transition
                 focus:border-[#22B8F4]
-
                 lg:h-10
                 lg:w-[320px]
               "
             />
           </div>
 
-          {/* Download */}
-          <button
-            onClick={() =>
-              alert("Catalogue download will be connected later.")
-            }
+          {/* Download Catalogue */}
+          <a
+            href={Catalogue}
+            download="GeneBio-Healthcare-Catalogue.pdf"
             className="
               flex
               h-11
@@ -119,14 +117,13 @@ export default function ProductFilters({
               text-white
               transition
               hover:bg-[#179ED8]
-
               lg:h-10
               lg:w-auto
             "
           >
             <Download size={15} />
             Download Full Catalogue
-          </button>
+          </a>
         </div>
       </div>
     </section>

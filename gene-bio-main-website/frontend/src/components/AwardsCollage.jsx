@@ -55,6 +55,58 @@ import entrepreneurAward3 from "../assets/images/enter3.jpeg";
 import entrepreneurAward4 from "../assets/images/enter4.jpeg";
 
 // =========================================================
+// DHR–ICMR HEALTH RESEARCH EXCELLENCE SUMMIT 2026
+// =========================================================
+
+import dhr1 from "../assets/images/dhr1.jpeg";
+import dhr2 from "../assets/images/dhr2.jpeg";
+import dhr3 from "../assets/images/dhr3.jpeg";
+import dhr4 from "../assets/images/dhr4.jpeg";
+import dhr5 from "../assets/images/dhr5.jpeg";
+import dhr6 from "../assets/images/dhr6.jpeg";
+import dhr7 from "../assets/images/dhr7.jpeg";
+import dhr8 from "../assets/images/dhr8.jpeg";
+
+// =========================================================
+// DHR–ICMR SUMMIT IMAGES
+// =========================================================
+
+const dhrSummitImages = [
+  {
+    src: dhr1,
+    alt: "GeneBio Healthcare at the 3rd DHR–ICMR Health Research Excellence Summit 2026",
+  },
+  {
+    src: dhr2,
+    alt: "GeneBio Healthcare participation at the DHR–ICMR Summit 2026",
+  },
+  {
+    src: dhr3,
+    alt: "Founder Arun Kumar Srivastava at the Health Research Excellence Summit",
+  },
+  {
+    src: dhr4,
+    alt: "DHR–ICMR Health Research Excellence Summit 2026",
+  },
+  {
+    src: dhr5,
+    alt: "GeneBio Healthcare at Bharat Mandapam, New Delhi",
+  },
+  {
+    src: dhr6,
+    alt: "Health Research Excellence Summit 2026",
+  },
+  {
+    src: dhr7,
+    alt: "GeneBio Healthcare summit moments",
+  },
+  {
+    src: dhr8,
+    alt: "3rd DHR–ICMR Health Research Excellence Summit 2026",
+  },
+];
+
+// =========================================================
 // ENTREPRENEUR AWARD IMAGES
 // =========================================================
 
@@ -123,10 +175,23 @@ const galleryImages = [
 ];
 
 // =========================================================
-// AWARD STORIES — LATEST AWARD FIRST
+// AWARD STORIES — LATEST FIRST
 // =========================================================
 
 const awardStories = [
+  {
+    id: "dhr-icmr-health-research-summit-2026",
+    title:
+      "3rd DHR–ICMR Health Research Excellence Summit 2026",
+    category: "Healthcare & Medical Research",
+    location: "Bharat Mandapam, New Delhi",
+    date: "16–17 November 2026",
+    description:
+      "GeneBio Healthcare Pvt. Ltd. participated in the 3rd DHR–ICMR Health Research Excellence Summit 2026, held on 16–17 November at Bharat Mandapam, New Delhi. Founder Mr. Arun Kumar Srivastava represented the organisation at this prestigious healthcare and medical research event.",
+    images: dhrSummitImages,
+    featured: true,
+  },
+
   {
     id: "entrepreneur-india-award-2026",
     title: "Entrepreneur India Awards 2026",
@@ -138,8 +203,8 @@ const awardStories = [
     images: entrepreneurImages,
     link: AWARD_LINKS.entrepreneur,
     linkLabel: "View Official Award Winners",
-    featured: true,
   },
+
   {
     id: "bharat-entrepreneurs-award",
     title: "Bharat Entrepreneurs Award",
@@ -351,7 +416,7 @@ export default function AwardsCollage() {
             </p>
           </div>
 
-          {/* AWARD STORIES — NEWEST AWARD FIRST */}
+          {/* AWARD STORIES — NEWEST FIRST */}
           {awardStories.map((award) => (
             <motion.article
               key={award.id}
